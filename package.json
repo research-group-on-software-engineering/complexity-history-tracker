@@ -1,0 +1,11 @@
+{
+  "name": "result",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/jhersonharyson/COMPLEXITY-HISTORY-TRACKER.git",
+  "author": "jhersonharyson <jherson_k-f@hotmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "uuid": "^8.3.2"
+  }
+}
