@@ -50,15 +50,11 @@ const datasets = [...classesnames].map((classname)=> {
     // })
 
 
-    for (let year = 2009; year <= YEAR_COUNT; year++) {
+    for (let year = 2010; year <= YEAR_COUNT; year++) {
         
         // 2010-DEC 2020-DEC
         const uniqueClass =  filteredByClassname.filter(item =>
-            item.commit_date.startsWith(`${year}-12-27`) ||
-            item.commit_date.startsWith(`${year}-12-28`) || 
-            item.commit_date.startsWith(`${year}-12-29`) ||
-            item.commit_date.startsWith(`${year}-12-30`) ||
-            item.commit_date.startsWith(`${year}-12-31`)).pop()
+            item.commit_date.startsWith(`${year}-12-`)).pop()
             
         ATTRS.map(attr => {
             datasetByClass[classname][attr].push((uniqueClass != undefined ? uniqueClass[attr] : NaN))
