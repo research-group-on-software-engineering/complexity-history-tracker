@@ -43,7 +43,7 @@ const datasets = [...classesnames].map((classname)=> {
         loc: [],
         wmc: []
     }
-
+    
     // const uniqueClassStart = filteredByClassname.filter( item => item.commit_date.startsWith(`2009-02-15`)).pop()
     // ATTRS.map(attr => {
     //     datasetByClass[classname][attr].push(uniqueClassStart != undefined ? uniqueClassStart[attr] : NaN)
