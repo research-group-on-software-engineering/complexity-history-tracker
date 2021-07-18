@@ -1,0 +1,3971 @@
+[
+    {
+        "classname": "grails.spring.BeanBuilder$DeferredProperty",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    1,
+                    1,
+                    1,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    0,
+                    0,
+                    0,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    13,
+                    13,
+                    13,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    2,
+                    2,
+                    2,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "grails.spring.BeanBuilder",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    43,
+                    43,
+                    43,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    579,
+                    579,
+                    597,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    587,
+                    587,
+                    588,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    137,
+                    137,
+                    140,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "grails.spring.BeanBuilder$ConfigurableRuntimeBeanReference",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    7,
+                    7,
+                    7,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    0,
+                    0,
+                    0,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    74,
+                    74,
+                    74,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    10,
+                    10,
+                    10,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "grails.spring.BeanBuilder$Anonymous1",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    2,
+                    2,
+                    2,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    0,
+                    0,
+                    0,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    7,
+                    7,
+                    7,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    1,
+                    1,
+                    1,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "grails.spring.BeanBuilder$Anonymous2",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    1,
+                    1,
+                    1,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    0,
+                    0,
+                    0,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    10,
+                    10,
+                    10,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    2,
+                    2,
+                    2,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "grails.spring.BeanBuilder$Anonymous3",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    0,
+                    0,
+                    0,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    0,
+                    0,
+                    0,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    7,
+                    7,
+                    7,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    2,
+                    2,
+                    2,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "grails.spring.BeanBuilder$ConfigurableRuntimeBeanReference$WrappedPropertyValue",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    4,
+                    4,
+                    4,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    0,
+                    0,
+                    0,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    38,
+                    38,
+                    38,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    10,
+                    10,
+                    10,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "JavadocFixTool",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    1,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    15,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    171,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    41,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.grails.charsequences.SubCharSequence",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    36,
+                    36,
+                    36,
+                    36,
+                    36,
+                    36,
+                    36
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    18,
+                    18,
+                    18,
+                    18,
+                    18,
+                    18,
+                    18
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.grails.spring.BeanConfiguration",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    120,
+                    120,
+                    120,
+                    120,
+                    120,
+                    120,
+                    120
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    20,
+                    20,
+                    20,
+                    20,
+                    20,
+                    20,
+                    20
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    16,
+                    16,
+                    16,
+                    16,
+                    16,
+                    16,
+                    16
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.grails.encoder.EncodesToWriter",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    5,
+                    5,
+                    5,
+                    5,
+                    5,
+                    5,
+                    5
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.grails.spring.GrailsContextEvent",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    12,
+                    12,
+                    12,
+                    12,
+                    12,
+                    12,
+                    12
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.grails.encoder.ChainedEncoder$Anonymous1",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    5,
+                    5,
+                    5,
+                    5,
+                    5,
+                    5,
+                    5
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.grails.encoder.ChainedEncoder$ChainedEncoderCacheItem",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    16,
+                    16,
+                    16,
+                    16,
+                    16,
+                    16,
+                    16
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.grails.encoder.ChainedEncoder",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    9,
+                    9,
+                    9,
+                    9,
+                    9,
+                    9,
+                    9
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    11,
+                    11,
+                    11,
+                    11,
+                    11,
+                    11,
+                    11
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    113,
+                    113,
+                    113,
+                    113,
+                    113,
+                    113,
+                    113
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    26,
+                    26,
+                    26,
+                    26,
+                    26,
+                    26,
+                    26
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.grails.encoder.CodecIdentifierProvider",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.grails.spring.DefaultRuntimeSpringConfiguration",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    16,
+                    16,
+                    16,
+                    16,
+                    16,
+                    16,
+                    16
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    607,
+                    607,
+                    607,
+                    607,
+                    607,
+                    607,
+                    607
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    252,
+                    246,
+                    246,
+                    246,
+                    246,
+                    246,
+                    246
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    74,
+                    72,
+                    72,
+                    72,
+                    72,
+                    72,
+                    72
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.grails.encoder.WriterEncodedAppender",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    5,
+                    5,
+                    5,
+                    5,
+                    5,
+                    5,
+                    5
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    24,
+                    24,
+                    24,
+                    24,
+                    24,
+                    24,
+                    24
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    7,
+                    7,
+                    7,
+                    7,
+                    7,
+                    7,
+                    7
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.grails.encoder.EncodedAppenderWriter",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    8,
+                    8,
+                    8,
+                    8,
+                    8,
+                    8,
+                    8
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    48,
+                    48,
+                    48,
+                    48,
+                    48,
+                    48,
+                    48
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    16,
+                    16,
+                    16,
+                    16,
+                    16,
+                    16,
+                    16
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.grails.buffer.StringCharArrayAccessor",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    16,
+                    16,
+                    25,
+                    25,
+                    25,
+                    25,
+                    25
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    119,
+                    119,
+                    121,
+                    121,
+                    121,
+                    121,
+                    121
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    27,
+                    27,
+                    28,
+                    28,
+                    28,
+                    28,
+                    28
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.grails.spring.DefaultBeanConfiguration",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    11,
+                    11,
+                    12,
+                    12,
+                    12,
+                    12,
+                    12
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    231,
+                    231,
+                    231,
+                    231,
+                    231,
+                    231,
+                    231
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    213,
+                    213,
+                    216,
+                    216,
+                    216,
+                    216,
+                    216
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    60,
+                    60,
+                    61,
+                    61,
+                    61,
+                    61,
+                    61
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.grails.encoder.CodecLookup",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.grails.encoder.Decoder",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.grails.encoder.EncodedAppender",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    45,
+                    45,
+                    45,
+                    45,
+                    45,
+                    45,
+                    45
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    12,
+                    12,
+                    12,
+                    12,
+                    12,
+                    12,
+                    12
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    10,
+                    10,
+                    10,
+                    10,
+                    10,
+                    10,
+                    10
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.grails.spring.RuntimeSpringConfiguration",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    9,
+                    9,
+                    9,
+                    9,
+                    9,
+                    9,
+                    9
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    300,
+                    300,
+                    300,
+                    300,
+                    300,
+                    300,
+                    300
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    27,
+                    27,
+                    27,
+                    27,
+                    27,
+                    27,
+                    27
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    25,
+                    25,
+                    25,
+                    25,
+                    25,
+                    25,
+                    25
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.grails.encoder.impl.RawCodec",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    9,
+                    9,
+                    9,
+                    9,
+                    9,
+                    9,
+                    9
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    36,
+                    36,
+                    36,
+                    36,
+                    36,
+                    36,
+                    36
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    42,
+                    42,
+                    42,
+                    42,
+                    42,
+                    42,
+                    42
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    11,
+                    11,
+                    11,
+                    11,
+                    11,
+                    11,
+                    11
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.grails.encoder.impl.RawCodec$Anonymous1",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    5,
+                    5,
+                    5,
+                    5,
+                    5,
+                    5,
+                    5
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.grails.encoder.StreamingEncoder",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.grails.encoder.impl.NoneEncoder",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    6,
+                    6,
+                    6,
+                    6,
+                    6,
+                    6,
+                    6
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    15,
+                    15,
+                    15,
+                    15,
+                    15,
+                    15,
+                    15
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    20,
+                    20,
+                    20,
+                    20,
+                    20,
+                    20,
+                    20
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    6,
+                    6,
+                    6,
+                    6,
+                    6,
+                    6,
+                    6
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.grails.encoder.impl.JavaScriptEncoder",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    74,
+                    74,
+                    74,
+                    74,
+                    77,
+                    77,
+                    77
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    31,
+                    31,
+                    31,
+                    31,
+                    31,
+                    31,
+                    31
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.grails.encoder.impl.JavaScriptEncoder$Anonymous1",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    5,
+                    5,
+                    5,
+                    5,
+                    5,
+                    5,
+                    5
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.grails.encoder.StreamEncodeable",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.grails.encoder.impl.HTMLEncoder",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    9,
+                    9,
+                    9,
+                    9,
+                    9,
+                    9,
+                    9
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.grails.encoder.StreamingEncoderEncodedAppender",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    6,
+                    6,
+                    6,
+                    6,
+                    6,
+                    6,
+                    6
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    38,
+                    38,
+                    38,
+                    38,
+                    38,
+                    38,
+                    38
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    9,
+                    9,
+                    9,
+                    9,
+                    9,
+                    9,
+                    9
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.grails.buffer.FastStringPrintWriter",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    7,
+                    7,
+                    7,
+                    7,
+                    7,
+                    7,
+                    7
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    6,
+                    6,
+                    6,
+                    6,
+                    6,
+                    6,
+                    6
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    57,
+                    57,
+                    57,
+                    57,
+                    57,
+                    57,
+                    57
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    14,
+                    14,
+                    14,
+                    14,
+                    14,
+                    14,
+                    14
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.grails.encoder.impl.BasicJSONEncoder$Anonymous1",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    5,
+                    5,
+                    5,
+                    5,
+                    5,
+                    5,
+                    5
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.grails.encoder.impl.BasicJSONEncoder",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    15,
+                    15,
+                    15,
+                    15,
+                    15,
+                    15,
+                    15
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    64,
+                    64,
+                    64,
+                    64,
+                    64,
+                    64,
+                    64
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    23,
+                    23,
+                    22,
+                    22,
+                    22,
+                    22,
+                    22
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.grails.encoder.impl.XMLCodecFactory$Anonymous1",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    11,
+                    11,
+                    11,
+                    11,
+                    11,
+                    11,
+                    11
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.grails.encoder.impl.XMLCodecFactory",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    21,
+                    21,
+                    21,
+                    21,
+                    21,
+                    21,
+                    21
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.grails.encoder.CombinedCodecIdentifier",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    34,
+                    34,
+                    34,
+                    34,
+                    34,
+                    34,
+                    34
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    9,
+                    9,
+                    9,
+                    9,
+                    9,
+                    9,
+                    9
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.grails.charsequences.CharSequences",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    6,
+                    6,
+                    6,
+                    6,
+                    6,
+                    6,
+                    6
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    36,
+                    36,
+                    45,
+                    45,
+                    45,
+                    45,
+                    45
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    74,
+                    74,
+                    76,
+                    76,
+                    76,
+                    76,
+                    76
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    23,
+                    23,
+                    24,
+                    24,
+                    24,
+                    24,
+                    24
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.grails.encoder.CodecLookupHelper",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    6,
+                    6,
+                    6,
+                    6,
+                    6,
+                    6,
+                    6
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    16,
+                    16,
+                    18,
+                    18,
+                    18,
+                    18,
+                    18
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    4,
+                    4,
+                    5,
+                    5,
+                    5,
+                    5,
+                    5
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.grails.buffer.GrailsWrappedWriter",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    5,
+                    5,
+                    5,
+                    5,
+                    5,
+                    5,
+                    5
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.grails.encoder.impl.HTMLJSCodec",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    8,
+                    8,
+                    8,
+                    8,
+                    8,
+                    8,
+                    8
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    14,
+                    14,
+                    14,
+                    14,
+                    14,
+                    14,
+                    14
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.grails.buffer.GrailsLazyProxyPrintWriter",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    42,
+                    42,
+                    42,
+                    42,
+                    42,
+                    42,
+                    42
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    12,
+                    12,
+                    12,
+                    12,
+                    12,
+                    12,
+                    12
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.grails.buffer.GrailsLazyProxyPrintWriter$DestinationFactory",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.grails.buffer.GrailsPrintWriter",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    21,
+                    21,
+                    21,
+                    21,
+                    21,
+                    21
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    2023,
+                    2023,
+                    2023,
+                    2023,
+                    2023,
+                    2023
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    487,
+                    487,
+                    487,
+                    487,
+                    487,
+                    487
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    145,
+                    145,
+                    145,
+                    145,
+                    145,
+                    145
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.grails.encoder.AbstractEncodedAppender",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    10,
+                    10,
+                    null,
+                    null
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    99,
+                    99,
+                    null,
+                    null
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    83,
+                    83,
+                    null,
+                    null
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    28,
+                    28,
+                    null,
+                    null
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.grails.encoder.EncodingStateRegistryLookup",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    1,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    0,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    3,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    1,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    }
+]
