@@ -1,0 +1,3334 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Complexity History Tracker - HIVE</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.4.1/chart.min.js"
+      integrity="sha512-5vwN8yor2fFT9pgPS9p9R7AszYaNn0LkQElTXIsZFCL7ucT8zDCAqlQXDdaqgA1mZP47hdvztBMsIoFxq/FyyQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+      .container ul,
+      .container li {
+        list-style-type: none;
+        cursor: pointer;
+        padding-left: 0;
+        width: fit-content;
+      }
+
+      .container li {
+        padding-top: 3px;
+        padding-bottom: 3px;
+      }
+
+      .container li:hover {
+        background-color: #c2c2c2;
+        width: 100%;
+        color: #fff;
+      }
+      .container #filter {
+        width: 50vw;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+      .container h2{
+        margin-top: 30px;
+      }
+    </style>
+  </head>
+  <body>
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#"></a>
+      <a class="navbar-brand" href="#">Complexity Tracker</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="./../menu.html">Projects<span class="sr-only"></span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">cluster</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index-filled.html">classes</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  
+    <div class="container">
+      <h2>Complexity History Tracker - HIVE</h2>
+      <!-- <input placeholder="filter classname" id="filter" /> -->
+      <ul id="sel" style="max-height: 200px; overflow-y: scroll" class="card">
+        <li value="s0001">Carregando...</li>
+      </ul>
+    
+    <div style="width: 100%" class="d-flex justify-content-center align-items-center">
+    
+        <canvas id="myChart" width="400" height="150"></canvas>
+      </div>
+
+      <div id="tables"></div>
+
+  </div>
+
+  
+ 
+  </body>
+
+  <script>
+    let selected =
+      document.location.href.split("?selected=")[1] ||
+      "mean";
+    let names = [];
+
+    let filter = "";
+    $(function () {
+      document.querySelector("#filter")?.addEventListener("keyup", (event) => {
+        
+        filter = event.target.value;
+
+        mapFilenames(
+          grouped.filter((file) =>
+            file.classname
+              .toLocaleLowerCase()
+              .includes(filter.toLocaleLowerCase())
+          )
+        );
+      });
+
+      const grouped_raw = [
+    {
+        "classname": "org.apache.hadoop.hive.llap.io.api.LlapIo",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    3,
+                    3,
+                    4,
+                    4,
+                    4,
+                    4
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    1,
+                    1,
+                    6,
+                    10,
+                    10,
+                    1
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    4,
+                    4,
+                    6,
+                    7,
+                    7,
+                    4
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    2,
+                    2,
+                    4,
+                    5,
+                    5,
+                    2
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.apache.hadoop.hive.llap.registry.impl.LlapRegistryService",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    8,
+                    9,
+                    10,
+                    11,
+                    12,
+                    10
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    0,
+                    0,
+                    11,
+                    11,
+                    0,
+                    0
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    51,
+                    89,
+                    98,
+                    98,
+                    122,
+                    95
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    14,
+                    21,
+                    24,
+                    24,
+                    31,
+                    23
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.apache.hadoop.hive.llap.ext.LlapTaskUmbilicalExternalClient",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    21,
+                    21,
+                    21,
+                    21,
+                    22
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    0,
+                    14,
+                    14,
+                    14,
+                    0
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    273,
+                    405,
+                    405,
+                    405,
+                    293
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    27,
+                    29,
+                    29,
+                    29,
+                    31
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.apache.hadoop.hive.llap.ext.LlapTaskUmbilicalExternalClient$Anonymous1",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    24,
+                    9,
+                    9,
+                    9,
+                    24
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    6,
+                    2,
+                    2,
+                    2,
+                    6
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.apache.hadoop.hive.llap.ext.LlapTaskUmbilicalExternalClient$HeartbeatCheckTask",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    33,
+                    22,
+                    22,
+                    22,
+                    33
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    9,
+                    5,
+                    5,
+                    5,
+                    9
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.apache.hadoop.hive.llap.ext.LlapTaskUmbilicalExternalClient$LlapTaskUmbilicalExternalImpl",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    11,
+                    14,
+                    15,
+                    15,
+                    12
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    15,
+                    35,
+                    35,
+                    35,
+                    15
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    87,
+                    157,
+                    157,
+                    157,
+                    87
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    19,
+                    37,
+                    37,
+                    37,
+                    19
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.apache.hadoop.hive.llap.ext.LlapTaskUmbilicalExternalClient$LlapTaskUmbilicalExternalResponder",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    6,
+                    6,
+                    6,
+                    6,
+                    6
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    6,
+                    6,
+                    6,
+                    6,
+                    6
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.apache.hadoop.hive.llap.ext.LlapTaskUmbilicalExternalClient$PendingEventData",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    2,
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    0,
+                    null,
+                    null,
+                    null,
+                    0
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    8,
+                    null,
+                    null,
+                    null,
+                    8
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    1,
+                    null,
+                    null,
+                    null,
+                    1
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.apache.hadoop.hive.llap.ext.LlapTaskUmbilicalExternalClient$TaskHeartbeatInfo",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    0,
+                    null,
+                    null,
+                    null,
+                    0
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    0,
+                    null,
+                    null,
+                    null,
+                    0
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    13,
+                    null,
+                    null,
+                    null,
+                    13
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    1,
+                    null,
+                    null,
+                    null,
+                    1
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.apache.hadoop.hive.llap.LlapRowRecordReader",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    16,
+                    19,
+                    19,
+                    19,
+                    16
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    16,
+                    46,
+                    60,
+                    60,
+                    16
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    96,
+                    155,
+                    158,
+                    158,
+                    96
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    19,
+                    33,
+                    34,
+                    34,
+                    19
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.apache.hadoop.hive.llap.registry.impl.LlapZookeeperRegistryImpl",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    29,
+                    18,
+                    18,
+                    22,
+                    30
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    83,
+                    110,
+                    110,
+                    149,
+                    151
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    542,
+                    259,
+                    257,
+                    319,
+                    629
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    70,
+                    40,
+                    40,
+                    49,
+                    80
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.apache.hadoop.hive.llap.registry.impl.LlapZookeeperRegistryImpl$Anonymous1",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    2,
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    1,
+                    null,
+                    null,
+                    null,
+                    1
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    12,
+                    null,
+                    null,
+                    null,
+                    12
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    5,
+                    null,
+                    null,
+                    null,
+                    5
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.apache.hadoop.hive.llap.registry.impl.LlapZookeeperRegistryImpl$DynamicServiceInstance",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    5,
+                    6,
+                    6,
+                    7,
+                    5
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    25,
+                    11,
+                    11,
+                    11,
+                    52
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    58,
+                    44,
+                    44,
+                    44,
+                    78
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    12,
+                    8,
+                    8,
+                    8,
+                    18
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.apache.hadoop.hive.llap.registry.impl.LlapZookeeperRegistryImpl$DynamicServiceInstanceSet",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    9,
+                    10,
+                    10,
+                    10,
+                    11
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    0,
+                    0,
+                    0,
+                    0,
+                    24
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    128,
+                    50,
+                    50,
+                    50,
+                    126
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    34,
+                    14,
+                    14,
+                    14,
+                    37
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.apache.hadoop.hive.llap.registry.impl.LlapZookeeperRegistryImpl$InstanceStateChangeListener",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    8,
+                    null,
+                    null,
+                    null,
+                    8
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    0,
+                    null,
+                    null,
+                    null,
+                    0
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    29,
+                    null,
+                    null,
+                    null,
+                    35
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    10,
+                    null,
+                    null,
+                    null,
+                    11
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.apache.hadoop.hive.llap.registry.impl.LlapZookeeperRegistryImpl$JaasConfiguration",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    0,
+                    null,
+                    null,
+                    null,
+                    0
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    0,
+                    null,
+                    null,
+                    null,
+                    0
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    28,
+                    null,
+                    null,
+                    null,
+                    28
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    4,
+                    null,
+                    null,
+                    null,
+                    4
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.apache.hadoop.hive.llap.registry.impl.TestSlotZnode",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    13,
+                    13,
+                    13,
+                    13,
+                    13
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    93,
+                    93,
+                    93,
+                    93,
+                    93
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    193,
+                    193,
+                    193,
+                    193,
+                    193
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    30,
+                    30,
+                    30,
+                    30,
+                    30
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.apache.hadoop.hive.llap.registry.impl.TestSlotZnode$Anonymous1",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    11,
+                    11,
+                    11,
+                    11,
+                    11
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.apache.hadoop.hive.llap.registry.impl.TestSlotZnode$Trigger",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    28,
+                    28,
+                    28,
+                    28,
+                    28
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    7,
+                    7,
+                    7,
+                    7,
+                    7
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.apache.hadoop.hive.llap.security.LlapTokenClient",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    13,
+                    13,
+                    13,
+                    13,
+                    13
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    86,
+                    86,
+                    86,
+                    86,
+                    86
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    21,
+                    21,
+                    21,
+                    21,
+                    21
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.apache.hadoop.hive.llap.tez.LlapProtocolClientProxy",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    30,
+                    21,
+                    23,
+                    23,
+                    30
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    0,
+                    36,
+                    45,
+                    45,
+                    0
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    326,
+                    78,
+                    90,
+                    90,
+                    326
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    17,
+                    11,
+                    12,
+                    12,
+                    17
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.apache.hadoop.hive.llap.tez.LlapProtocolClientProxy$Anonymous1",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    0,
+                    null,
+                    null,
+                    null,
+                    0
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    1,
+                    null,
+                    null,
+                    null,
+                    1
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    8,
+                    null,
+                    null,
+                    null,
+                    8
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    2,
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.apache.hadoop.hive.llap.tez.LlapProtocolClientProxy$Anonymous2",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    2,
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    0,
+                    null,
+                    null,
+                    null,
+                    0
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    5,
+                    null,
+                    null,
+                    null,
+                    5
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    1,
+                    null,
+                    null,
+                    null,
+                    1
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.apache.hadoop.hive.llap.tez.LlapProtocolClientProxy$CallableRequest",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    5,
+                    null,
+                    null,
+                    null,
+                    5
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    2,
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    17,
+                    null,
+                    null,
+                    null,
+                    17
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    4,
+                    null,
+                    null,
+                    null,
+                    4
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.apache.hadoop.hive.llap.tez.LlapProtocolClientProxy$ExecuteRequestCallback",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    1,
+                    null,
+                    null,
+                    null,
+                    1
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    1,
+                    null,
+                    null,
+                    null,
+                    1
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    4,
+                    null,
+                    null,
+                    null,
+                    4
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    2,
+                    null,
+                    null,
+                    null,
+                    2
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.apache.hadoop.hive.llap.tez.LlapProtocolClientProxy$RequestManager",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    8,
+                    null,
+                    null,
+                    null,
+                    8
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    21,
+                    null,
+                    null,
+                    null,
+                    21
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    143,
+                    null,
+                    null,
+                    null,
+                    143
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    27,
+                    null,
+                    null,
+                    null,
+                    27
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.apache.hadoop.hive.llap.tez.LlapProtocolClientProxy$ResponseCallback",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    5,
+                    null,
+                    null,
+                    null,
+                    5
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    0,
+                    null,
+                    null,
+                    null,
+                    0
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    26,
+                    null,
+                    null,
+                    null,
+                    26
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    3,
+                    null,
+                    null,
+                    null,
+                    3
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.apache.hadoop.hive.llap.tez.LlapProtocolClientProxy$SendQueryCompleteCallable",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    6,
+                    5,
+                    5,
+                    5,
+                    6
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    8,
+                    8,
+                    8,
+                    8,
+                    8
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.apache.hadoop.hive.llap.tez.LlapProtocolClientProxy$SendSourceStateUpdateCallable",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    6,
+                    5,
+                    5,
+                    5,
+                    6
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    8,
+                    8,
+                    8,
+                    8,
+                    8
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.apache.hadoop.hive.llap.tez.LlapProtocolClientProxy$SendTerminateFragmentCallable",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    6,
+                    5,
+                    5,
+                    5,
+                    6
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    8,
+                    8,
+                    8,
+                    8,
+                    8
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.apache.hadoop.hive.llap.tez.LlapProtocolClientProxy$SubmitWorkCallable",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    6,
+                    5,
+                    5,
+                    5,
+                    6
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    8,
+                    8,
+                    8,
+                    8,
+                    8
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.apache.hadoop.hive.llap.ext.LlapTaskUmbilicalExternalClient$Anonymous2",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    1,
+                    1,
+                    1,
+                    null
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    0,
+                    0,
+                    0,
+                    null
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    6,
+                    6,
+                    6,
+                    null
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    1,
+                    1,
+                    1,
+                    null
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.apache.hadoop.hive.llap.ext.LlapTaskUmbilicalExternalClient$RequestInfo",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    3,
+                    3,
+                    3,
+                    null
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    0,
+                    0,
+                    0,
+                    null
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    19,
+                    19,
+                    19,
+                    null
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    1,
+                    1,
+                    1,
+                    null
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.apache.hadoop.hive.llap.ext.LlapTaskUmbilicalExternalClient$RequestState",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    0,
+                    0,
+                    0,
+                    null
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    0,
+                    0,
+                    0,
+                    null
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    1,
+                    1,
+                    1,
+                    null
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    0,
+                    0,
+                    0,
+                    null
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.apache.hadoop.hive.llap.ext.LlapTaskUmbilicalExternalClient$SharedUmbilicalServer",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    4,
+                    4,
+                    4,
+                    null
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    1,
+                    1,
+                    1,
+                    null
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    27,
+                    27,
+                    27,
+                    null
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    5,
+                    5,
+                    5,
+                    null
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.apache.hadoop.hive.llap.ext.LlapTaskUmbilicalExternalClient$SubmitWorkCallback",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    4,
+                    4,
+                    4,
+                    null
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    0,
+                    0,
+                    0,
+                    null
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    27,
+                    27,
+                    27,
+                    null
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    6,
+                    6,
+                    6,
+                    null
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.apache.hadoop.hive.llap.tez.LlapProtocolClientProxy$SendUpdateFragmentCallable",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    5,
+                    5,
+                    5,
+                    null
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    1,
+                    1,
+                    1,
+                    null
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    8,
+                    8,
+                    8,
+                    null
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    2,
+                    2,
+                    2,
+                    null
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.apache.hadoop.hive.registry.impl.ZkRegistryBase",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    22,
+                    25,
+                    25,
+                    null
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    131,
+                    272,
+                    299,
+                    null
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    393,
+                    457,
+                    473,
+                    null
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    84,
+                    99,
+                    103,
+                    null
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.apache.hadoop.hive.registry.impl.ZkRegistryBase$Anonymous1",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    2,
+                    2,
+                    2,
+                    null
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    1,
+                    1,
+                    1,
+                    null
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    12,
+                    12,
+                    12,
+                    null
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    5,
+                    5,
+                    5,
+                    null
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.apache.hadoop.hive.registry.impl.ZkRegistryBase$InstanceStateChangeListener",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    8,
+                    8,
+                    8,
+                    null
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    0,
+                    0,
+                    0,
+                    null
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    36,
+                    41,
+                    44,
+                    null
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    11,
+                    12,
+                    13,
+                    null
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.apache.hadoop.hive.llap.tez.LlapProtocolClientProxy$RegisterDagCallable",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    5,
+                    5,
+                    null
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    1,
+                    1,
+                    null
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    8,
+                    8,
+                    null
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    2,
+                    2,
+                    null
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.apache.hadoop.hive.registry.impl.ZkRegistryBase$ZkConnectionStateListener",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    3,
+                    3,
+                    null
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    0,
+                    0,
+                    null
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    5,
+                    5,
+                    null
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    1,
+                    1,
+                    null
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.apache.hadoop.hive.llap.registry.impl.LlapZookeeperRegistryImpl$ConfigChangeLockResult",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    1,
+                    null
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    0,
+                    null
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    17,
+                    null
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    4,
+                    null
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.apache.hadoop.hive.llap.registry.impl.TestLlapZookeeperRegistryImpl",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    13,
+                    null
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    2,
+                    null
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    55,
+                    null
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    6,
+                    null
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    }
+]
+;
+
+
+      
+     const grouped_filled = grouped_raw.map(file => {
+        return {
+          ...file,
+          datasets: file.datasets.map(dataset => {
+            let lastData = 0;
+            return {
+              ...dataset,
+              data: dataset.data.map(d => {
+                // if(d == null){
+                //   return lastData
+                // }
+                // lastData = d
+                return d;
+              })
+            }
+          })
+        }
+      })
+
+       
+        const attrsMedium = [
+            {
+              label: "cbo",
+              data: [],
+              borderColor: "#4dc9f6",
+              fill: false,
+              cubicInterpolationMode: "monotone",
+              tension: 0.4,
+            },
+            {
+              label: "lcom",
+              data: [],
+              borderColor: "#f67019",
+              fill: false,
+              cubicInterpolationMode: "monotone",
+              tension: 0.4,
+            },
+            {
+              label: "loc",
+              data: [],
+              borderColor: "#f53794",
+              fill: false,
+              cubicInterpolationMode: "monotone",
+              tension: 0.4,
+            },
+            {
+              label: "wmc",
+              data: [],
+              borderColor: "#537bc4",
+              fill: false,
+              cubicInterpolationMode: "monotone",
+              tension: 0.4,
+            },
+          ]  
+        //medium
+        
+        attrsMedium.map(attr => {
+          attr["data"] = []
+          const length = grouped_filled[0].datasets[0].data.length
+          
+          for(let i = 0 ; i < length; i ++){
+            attr["raw_data"] = []
+            grouped_filled.map(file => {
+              const founded = file.datasets.filter(dataset => dataset.label == attr.label).pop()
+              attr["raw_data"].push(founded.data[i])
+            })
+          const medium_point = attr["raw_data"].filter(d => d != null).reduce((acc, v)=> acc+v, 0) /  attr["raw_data"].filter(d => d != null).length
+          attr["data"].push(medium_point)
+        }
+         
+        })
+
+     
+
+        const attrsMedian = [
+            {
+              label: "cbo",
+              data: [],
+              borderColor: "#4dc9f670",
+              fill: false,
+              cubicInterpolationMode: "monotone",
+              tension: 0.4,
+            },
+            {
+              label: "lcom",
+              data: [],
+              borderColor: "#f6701970",
+              fill: false,
+              cubicInterpolationMode: "monotone",
+              tension: 0.4,
+            },
+            {
+              label: "loc",
+              data: [],
+              borderColor: "#f5379470",
+              fill: false,
+              cubicInterpolationMode: "monotone",
+              tension: 0.4,
+            },
+            {
+              label: "wmc",
+              data: [],
+              borderColor: "#537bc470",
+              fill: false,
+              cubicInterpolationMode: "monotone",
+              tension: 0.4,
+            },
+          ]
+     
+        //median
+        attrsMedian.map(attr => {
+          attr["data"] = []
+          const length = grouped_filled[0].datasets[0].data.length
+
+          for(let i = 0 ; i < length; i ++){
+            attr["raw_data"] = []
+            grouped_filled.map(file => {
+              const founded = file.datasets.filter(dataset => dataset.label == attr.label).pop()
+              attr["raw_data"].push(founded.data[i])
+            })
+            const filtered_data = attr["raw_data"].filter(d => d != null).sort((a,b)=>a-b)
+           
+            if(filtered_data.length % 2 == 0){
+              const middle = filtered_data.length / 2
+              attr["data"].push((filtered_data[middle-1] + filtered_data[middle+1]) /2)
+            }else {
+              attr["data"].push(filtered_data[Math.ceil(filtered_data.length / 2)])
+            }
+        }
+         
+        })
+
+
+
+        const attrsStd = [
+            {
+              label: "cbo",
+              data: [],
+              borderColor: "#b87cf9",
+              fill: false,
+              cubicInterpolationMode: "monotone",
+              tension: 0.4,
+            },
+            {
+              label: "lcom",
+              data: [],
+              borderColor: "#3ebb7c",
+              fill: false,
+              cubicInterpolationMode: "monotone",
+              tension: 0.4,
+            },
+            {
+              label: "loc",
+              data: [],
+              borderColor: "#fbec27",
+              fill: false,
+              cubicInterpolationMode: "monotone",
+              tension: 0.4,
+            },
+            {
+              label: "wmc",
+              data: [],
+              borderColor: "#ff0000",
+              fill: false,
+              cubicInterpolationMode: "monotone",
+              tension: 0.4,
+            },
+          ]
+       
+        //median
+        attrsStd.map(attr => {
+          attr["data"] = []
+          const length = grouped_filled[0].datasets[0].data.length
+
+          for(let i = 0 ; i < length; i ++){
+            attr["raw_data"] = []
+            grouped_filled.map(file => {
+              const founded = file.datasets.filter(dataset => dataset.label == attr.label).pop()
+              attr["raw_data"].push(founded.data[i])
+            })
+            const filtered_data = attr["raw_data"].filter(d => d != null)
+            attr["data"].push(stdev(filtered_data).deviation)
+        }
+         
+        })
+
+
+      const grouped = [{
+          classname: "mean",
+          datasets: attrsMedium
+        },
+        {
+          classname: "median",
+          datasets: attrsMedian
+        },
+        {
+          classname: "std",
+          datasets: attrsStd
+        },
+        {
+        classname: "mean_median_std",
+        datasets: [...attrsMedium, ...attrsMedian, ...attrsStd].map((a, i) => ({...a, label: `${a.label} ${i < 4 ? " Mean" : i < 8 ?" Median" : "STD"}`}))
+        }]
+
+        console.log(grouped)
+      
+      const ctx = document.getElementById("myChart").getContext("2d");
+
+      const MONTH_COUNT = 12;
+      const YEAR_COUNT = 2020;
+      const labels = [];
+      //labels.push("2004-01");
+      for (let year = 2015; year <= YEAR_COUNT; year++) {
+        labels.push(`${year}-12`);
+      }
+
+      const data = {
+        labels: labels,
+        datasets: grouped.filter((file) => file.classname == selected)[0][
+          "datasets"
+        ],
+      };
+
+      // build table 
+
+      const buildTable = () => {
+//          <tr>
+//    <th>Firstname</th>
+//    <th>Lastname</th>
+//    <th>Age</th>
+//  </tr>
+
+const attrs = ["cbo","lcom","loc", "wmc"]
+const metrics = ["mean", "median", "std"]
+            const tables = attrs.map(attr => {
+              let tableStr = "<table class='table'>"
+              tableStr += `<tr><th></th><th></th><th></th><th>${attr}</th></tr>`
+              tableStr += `<tr><th></th><th>mean</th><th>median</th><th>std</th></tr>`
+
+              for(let i = 0; i < data.labels.length ; i++){
+                tableStr += `<tr><th>${data.labels[i]}</th><th>${grouped.filter(({classname}) => classname == "mean")[0].datasets.filter(({label}) => label == attr)[0].data[i]}
+                  </th><th>${grouped.filter(({classname}) => classname == "median")[0].datasets.filter(({label}) => label == attr)[0].data[i]}</th><th>${grouped.filter(({classname}) => classname == "std")[0].datasets.filter(({label}) => label == attr)[0].data[i]}</th></tr>`
+              }
+              
+
+              tableStr += "</table>"  
+              return tableStr
+            })
+
+            document.querySelector("#tables").innerHTML = tables.join("")
+
+
+
+      }
+
+      buildTable()
+      // </block:setup>
+
+      // <block:config:0>
+      const config = {
+        type: "line",
+        data: data,
+        options: {
+          responsive: true,
+          plugins: {
+            title: {
+              display: true,
+              text: "Complexity Tracker History - " + selected,
+            },
+          },
+          interaction: {
+            intersect: false,
+          },
+          scales: {
+            x: {
+              display: true,
+              title: {
+                display: true,
+              },
+            },
+            y: {
+              display: true,
+              title: {
+                display: true,
+                text: "Value",
+              },
+              suggestedMin: -10,
+              suggestedMax: 200,
+            },
+          },
+        },
+      };
+
+      var myChart = new Chart(ctx, config);
+
+      const mapFilenames = (grouped) => {
+        const list = [...new Set(grouped.map((f) => f.classname))];
+        
+        const select = document.querySelector("#sel");
+        select.innerHTML = list
+          .map((filename, index) => `<li id="file-${index}">${filename}</li>`)
+          .join("");
+        const r = list.map((filename, index) => {
+          document
+            .querySelector(`#file-${index}`)
+            .removeEventListener("click", () => {});
+          document
+            .querySelector(`#file-${index}`)
+            .addEventListener("click", () => {
+              selected = document.querySelector(`#file-${index}`).textContent;
+              document.location.href =
+                document.location.href.split("?")[0] + "?selected=" + selected;
+            });
+        });
+      };
+
+      mapFilenames(grouped);
+    });
+
+    const stdev = (arr) => {
+    const n = arr.length;
+    let sum = 0;
+
+    arr.map(function(data) {
+        sum+=data;
+    });
+
+    let mean = sum / n;
+
+    let variance = 0.0;
+    let v1 = 0.0;
+    let v2 = 0.0;
+
+    if (n != 1) {
+        for (let i = 0; i<n; i++) {
+            v1 = v1 + (arr[i] - mean) * (arr[i] - mean);
+            v2 = v2 + (arr[i] - mean);
+        }
+
+        v2 = v2 * v2 / n;
+        variance = (v1 - v2) / (n-1);
+        if (variance < 0) { variance = 0; }
+        stddev = Math.sqrt(variance);
+    }
+
+    return {
+        mean: Math.round(mean*100)/100,
+        variance: variance,
+        deviation: Math.round(stddev*100)/100
+    };
+};
+  </script>
+</html>
