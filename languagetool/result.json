@@ -1,0 +1,2549 @@
+[
+  {
+    "id": 134672,
+    "class_name": "org.languagetool.dev.dumpcheck.SentenceSourceIndexer",
+    "commit_date": "2013-12-01 00:00:00",
+    "cbo": 10,
+    "lcom": 0,
+    "loc": 75,
+    "wmc": 11
+  },
+  {
+    "id": 134582,
+    "class_name": "org.languagetool.dev.index.Indexer",
+    "commit_date": "2013-12-01 00:00:00",
+    "cbo": 15,
+    "lcom": 52,
+    "loc": 109,
+    "wmc": 21
+  },
+  {
+    "id": 134727,
+    "class_name": "org.languagetool.dev.index.LanguageToolFilter",
+    "commit_date": "2013-12-01 00:00:00",
+    "cbo": 12,
+    "lcom": 0,
+    "loc": 80,
+    "wmc": 14
+  },
+  {
+    "id": 134567,
+    "class_name": "org.languagetool.dev.index.PatternRuleQueryBuilder",
+    "commit_date": "2013-12-01 00:00:00",
+    "cbo": 21,
+    "lcom": 54,
+    "loc": 168,
+    "wmc": 48
+  },
+  {
+    "id": 134664,
+    "class_name": "org.languagetool.gui.Tools",
+    "commit_date": "2013-12-01 00:00:00",
+    "cbo": 2,
+    "lcom": 91,
+    "loc": 79,
+    "wmc": 28
+  },
+  {
+    "id": 134702,
+    "class_name": "org.languagetool.language.AmericanEnglish",
+    "commit_date": "2013-12-01 00:00:00",
+    "cbo": 2,
+    "lcom": 6,
+    "loc": 17,
+    "wmc": 4
+  },
+  {
+    "id": 134743,
+    "class_name": "org.languagetool.language.BritishEnglish",
+    "commit_date": "2013-12-01 00:00:00",
+    "cbo": 3,
+    "lcom": 3,
+    "loc": 15,
+    "wmc": 3
+  },
+  {
+    "id": 134595,
+    "class_name": "org.languagetool.language.Catalan",
+    "commit_date": "2013-12-01 00:00:00",
+    "cbo": 28,
+    "lcom": 55,
+    "loc": 56,
+    "wmc": 16
+  },
+  {
+    "id": 134732,
+    "class_name": "org.languagetool.language.English",
+    "commit_date": "2013-12-01 00:00:00",
+    "cbo": 24,
+    "lcom": 55,
+    "loc": 56,
+    "wmc": 16
+  },
+  {
+    "id": 134551,
+    "class_name": "org.languagetool.language.Esperanto",
+    "commit_date": "2013-12-01 00:00:00",
+    "cbo": 18,
+    "lcom": 36,
+    "loc": 41,
+    "wmc": 12
+  },
+  {
+    "id": 134692,
+    "class_name": "org.languagetool.language.Galician",
+    "commit_date": "2013-12-01 00:00:00",
+    "cbo": 21,
+    "lcom": 66,
+    "loc": 58,
+    "wmc": 17
+  },
+  {
+    "id": 134586,
+    "class_name": "org.languagetool.language.Lithuanian",
+    "commit_date": "2013-12-01 00:00:00",
+    "cbo": 10,
+    "lcom": 15,
+    "loc": 24,
+    "wmc": 7
+  },
+  {
+    "id": 134558,
+    "class_name": "org.languagetool.language.Polish",
+    "commit_date": "2013-12-01 00:00:00",
+    "cbo": 20,
+    "lcom": 36,
+    "loc": 45,
+    "wmc": 13
+  },
+  {
+    "id": 134800,
+    "class_name": "org.languagetool.language.Russian",
+    "commit_date": "2013-12-01 00:00:00",
+    "cbo": 20,
+    "lcom": 36,
+    "loc": 47,
+    "wmc": 13
+  },
+  {
+    "id": 134686,
+    "class_name": "org.languagetool.language.Slovenian",
+    "commit_date": "2013-12-01 00:00:00",
+    "cbo": 11,
+    "lcom": 28,
+    "loc": 30,
+    "wmc": 9
+  },
+  {
+    "id": 134656,
+    "class_name": "org.languagetool.language.Tagalog",
+    "commit_date": "2013-12-01 00:00:00",
+    "cbo": 10,
+    "lcom": 15,
+    "loc": 28,
+    "wmc": 7
+  },
+  {
+    "id": 134775,
+    "class_name": "org.languagetool.rules.bitext.BitextRule",
+    "commit_date": "2013-12-01 00:00:00",
+    "cbo": 8,
+    "lcom": 73,
+    "loc": 41,
+    "wmc": 15
+  },
+  {
+    "id": 134633,
+    "class_name": "org.languagetool.rules.br.TopoReplaceRule",
+    "commit_date": "2013-12-01 00:00:00",
+    "cbo": 9,
+    "lcom": 114,
+    "loc": 154,
+    "wmc": 43
+  },
+  {
+    "id": 134739,
+    "class_name": "org.languagetool.rules.ca.MorfologikCatalanSpellerRule",
+    "commit_date": "2013-12-01 00:00:00",
+    "cbo": 2,
+    "lcom": 3,
+    "loc": 13,
+    "wmc": 3
+  },
+  {
+    "id": 134646,
+    "class_name": "org.languagetool.rules.de.WordCoherencyRuleTest",
+    "commit_date": "2013-12-01 00:00:00",
+    "cbo": 6,
+    "lcom": 10,
+    "loc": 85,
+    "wmc": 5
+  },
+  {
+    "id": 134718,
+    "class_name": "org.languagetool.rules.en.AvsAnRuleTest",
+    "commit_date": "2013-12-01 00:00:00",
+    "cbo": 6,
+    "lcom": 0,
+    "loc": 92,
+    "wmc": 6
+  },
+  {
+    "id": 134770,
+    "class_name": "org.languagetool.rules.en.MorfologikNewZealandSpellerRuleTest",
+    "commit_date": "2013-12-01 00:00:00",
+    "cbo": 6,
+    "lcom": 0,
+    "loc": 25,
+    "wmc": 1
+  },
+  {
+    "id": 134552,
+    "class_name": "org.languagetool.rules.en.MorfologikSouthAfricanSpellerRuleTest",
+    "commit_date": "2013-12-01 00:00:00",
+    "cbo": 6,
+    "lcom": 0,
+    "loc": 25,
+    "wmc": 1
+  },
+  {
+    "id": 134700,
+    "class_name": "org.languagetool.rules.fr.QuestionWhitespaceRule",
+    "commit_date": "2013-12-01 00:00:00",
+    "cbo": 5,
+    "lcom": 10,
+    "loc": 104,
+    "wmc": 38
+  },
+  {
+    "id": 134824,
+    "class_name": "org.languagetool.rules.patterns.PatternRuleHandler",
+    "commit_date": "2013-12-01 00:00:00",
+    "cbo": 11,
+    "lcom": 3,
+    "loc": 447,
+    "wmc": 144
+  },
+  {
+    "id": 134638,
+    "class_name": "org.languagetool.rules.patterns.PatternRuleXmlCreator",
+    "commit_date": "2013-12-01 00:00:00",
+    "cbo": 11,
+    "lcom": 3,
+    "loc": 61,
+    "wmc": 13
+  },
+  {
+    "id": 134742,
+    "class_name": "org.languagetool.rules.pl.CompoundRuleTest",
+    "commit_date": "2013-12-01 00:00:00",
+    "cbo": 4,
+    "lcom": 1,
+    "loc": 12,
+    "wmc": 2
+  },
+  {
+    "id": 134623,
+    "class_name": "org.languagetool.rules.pl.MorfologikPolishSpellerRule",
+    "commit_date": "2013-12-01 00:00:00",
+    "cbo": 2,
+    "lcom": 6,
+    "loc": 16,
+    "wmc": 4
+  },
+  {
+    "id": 134678,
+    "class_name": "org.languagetool.rules.SameRuleGroupFilterTest",
+    "commit_date": "2013-12-01 00:00:00",
+    "cbo": 7,
+    "lcom": 10,
+    "loc": 47,
+    "wmc": 5
+  },
+  {
+    "id": 134734,
+    "class_name": "org.languagetool.rules.uk.MorfologikUkrainianSpellerRule",
+    "commit_date": "2013-12-01 00:00:00",
+    "cbo": 3,
+    "lcom": 6,
+    "loc": 29,
+    "wmc": 10
+  },
+  {
+    "id": 134756,
+    "class_name": "org.languagetool.rules.WrongWordInContextRule",
+    "commit_date": "2013-12-01 00:00:00",
+    "cbo": 9,
+    "lcom": 64,
+    "loc": 149,
+    "wmc": 36
+  },
+  {
+    "id": 134755,
+    "class_name": "org.languagetool.rules.WrongWordInContextRule$ContextWords",
+    "commit_date": "2013-12-01 00:00:00",
+    "cbo": 1,
+    "lcom": 2,
+    "loc": 24,
+    "wmc": 5
+  },
+  {
+    "id": 134685,
+    "class_name": "org.languagetool.server.HTTPSServerTest",
+    "commit_date": "2013-12-01 00:00:00",
+    "cbo": 6,
+    "lcom": 13,
+    "loc": 80,
+    "wmc": 11
+  },
+  {
+    "id": 134765,
+    "class_name": "org.languagetool.server.HTTPSServerTesting",
+    "commit_date": "2013-12-01 00:00:00",
+    "cbo": 7,
+    "lcom": 4,
+    "loc": 78,
+    "wmc": 9
+  },
+  {
+    "id": 134764,
+    "class_name": "org.languagetool.server.HTTPSServerTesting$TestRunnable",
+    "commit_date": "2013-12-01 00:00:00",
+    "cbo": 1,
+    "lcom": 0,
+    "loc": 16,
+    "wmc": 4
+  },
+  {
+    "id": 134621,
+    "class_name": "org.languagetool.server.LanguageToolHttpHandler",
+    "commit_date": "2013-12-01 00:00:00",
+    "cbo": 12,
+    "lcom": 80,
+    "loc": 273,
+    "wmc": 61
+  },
+  {
+    "id": 134620,
+    "class_name": "org.languagetool.server.LanguageToolHttpHandler$Anonymous1",
+    "commit_date": "2013-12-01 00:00:00",
+    "cbo": 1,
+    "lcom": 0,
+    "loc": 5,
+    "wmc": 1
+  },
+  {
+    "id": 134619,
+    "class_name": "org.languagetool.server.LanguageToolHttpHandler$QueryParams",
+    "commit_date": "2013-12-01 00:00:00",
+    "cbo": 0,
+    "lcom": 0,
+    "loc": 12,
+    "wmc": 1
+  },
+  {
+    "id": 134654,
+    "class_name": "org.languagetool.tagging.de.GermanTagger",
+    "commit_date": "2013-12-01 00:00:00",
+    "cbo": 12,
+    "lcom": 45,
+    "loc": 139,
+    "wmc": 36
+  },
+  {
+    "id": 134735,
+    "class_name": "org.languagetool.tagging.disambiguation.ca.CatalanHybridDisambiguator",
+    "commit_date": "2013-12-01 00:00:00",
+    "cbo": 5,
+    "lcom": 0,
+    "loc": 7,
+    "wmc": 1
+  },
+  {
+    "id": 134574,
+    "class_name": "org.languagetool.tagging.disambiguation.rules.ro.RomanianRuleDisambiguatorTest",
+    "commit_date": "2013-12-01 00:00:00",
+    "cbo": 9,
+    "lcom": 0,
+    "loc": 31,
+    "wmc": 4
+  },
+  {
+    "id": 134703,
+    "class_name": "org.languagetool.dev.dumpcheck.SentenceSourceIndexer",
+    "commit_date": "2014-12-01 00:00:00",
+    "cbo": 10,
+    "lcom": 0,
+    "loc": 75,
+    "wmc": 12
+  },
+  {
+    "id": 134717,
+    "class_name": "org.languagetool.dev.FrequencyIndexCreatorTest",
+    "commit_date": "2014-12-01 00:00:00",
+    "cbo": 10,
+    "lcom": 1,
+    "loc": 35,
+    "wmc": 7
+  },
+  {
+    "id": 134583,
+    "class_name": "org.languagetool.dev.index.Indexer",
+    "commit_date": "2014-12-01 00:00:00",
+    "cbo": 16,
+    "lcom": 50,
+    "loc": 115,
+    "wmc": 22
+  },
+  {
+    "id": 134760,
+    "class_name": "org.languagetool.dev.index.LanguageToolFilter",
+    "commit_date": "2014-12-01 00:00:00",
+    "cbo": 12,
+    "lcom": 0,
+    "loc": 97,
+    "wmc": 18
+  },
+  {
+    "id": 134570,
+    "class_name": "org.languagetool.dev.index.PatternRuleQueryBuilder",
+    "commit_date": "2014-12-01 00:00:00",
+    "cbo": 21,
+    "lcom": 83,
+    "loc": 182,
+    "wmc": 55
+  },
+  {
+    "id": 134695,
+    "class_name": "org.languagetool.gui.Tools",
+    "commit_date": "2014-12-01 00:00:00",
+    "cbo": 4,
+    "lcom": 105,
+    "loc": 139,
+    "wmc": 37
+  },
+  {
+    "id": 134696,
+    "class_name": "org.languagetool.gui.Tools$Anonymous1",
+    "commit_date": "2014-12-01 00:00:00",
+    "cbo": 1,
+    "lcom": 0,
+    "loc": 14,
+    "wmc": 4
+  },
+  {
+    "id": 134741,
+    "class_name": "org.languagetool.language.AmericanEnglish",
+    "commit_date": "2014-12-01 00:00:00",
+    "cbo": 3,
+    "lcom": 3,
+    "loc": 14,
+    "wmc": 3
+  },
+  {
+    "id": 134802,
+    "class_name": "org.languagetool.language.BritishEnglish",
+    "commit_date": "2014-12-01 00:00:00",
+    "cbo": 4,
+    "lcom": 3,
+    "loc": 15,
+    "wmc": 3
+  },
+  {
+    "id": 134597,
+    "class_name": "org.languagetool.language.Catalan",
+    "commit_date": "2014-12-01 00:00:00",
+    "cbo": 30,
+    "lcom": 64,
+    "loc": 60,
+    "wmc": 17
+  },
+  {
+    "id": 134772,
+    "class_name": "org.languagetool.language.English",
+    "commit_date": "2014-12-01 00:00:00",
+    "cbo": 32,
+    "lcom": 112,
+    "loc": 82,
+    "wmc": 24
+  },
+  {
+    "id": 134545,
+    "class_name": "org.languagetool.language.Esperanto",
+    "commit_date": "2014-12-01 00:00:00",
+    "cbo": 20,
+    "lcom": 43,
+    "loc": 45,
+    "wmc": 13
+  },
+  {
+    "id": 134729,
+    "class_name": "org.languagetool.language.Galician",
+    "commit_date": "2014-12-01 00:00:00",
+    "cbo": 22,
+    "lcom": 76,
+    "loc": 62,
+    "wmc": 18
+  },
+  {
+    "id": 134590,
+    "class_name": "org.languagetool.language.Lithuanian",
+    "commit_date": "2014-12-01 00:00:00",
+    "cbo": 13,
+    "lcom": 26,
+    "loc": 35,
+    "wmc": 10
+  },
+  {
+    "id": 134778,
+    "class_name": "org.languagetool.language.Persian",
+    "commit_date": "2014-12-01 00:00:00",
+    "cbo": 18,
+    "lcom": 26,
+    "loc": 35,
+    "wmc": 10
+  },
+  {
+    "id": 134564,
+    "class_name": "org.languagetool.language.Polish",
+    "commit_date": "2014-12-01 00:00:00",
+    "cbo": 25,
+    "lcom": 62,
+    "loc": 60,
+    "wmc": 17
+  },
+  {
+    "id": 134724,
+    "class_name": "org.languagetool.language.Slovenian",
+    "commit_date": "2014-12-01 00:00:00",
+    "cbo": 12,
+    "lcom": 34,
+    "loc": 34,
+    "wmc": 10
+  },
+  {
+    "id": 134676,
+    "class_name": "org.languagetool.language.Tagalog",
+    "commit_date": "2014-12-01 00:00:00",
+    "cbo": 15,
+    "lcom": 34,
+    "loc": 46,
+    "wmc": 12
+  },
+  {
+    "id": 134766,
+    "class_name": "org.languagetool.language.Tamil",
+    "commit_date": "2014-12-01 00:00:00",
+    "cbo": 12,
+    "lcom": 26,
+    "loc": 35,
+    "wmc": 10
+  },
+  {
+    "id": 134651,
+    "class_name": "org.languagetool.rules.br.TopoReplaceRule",
+    "commit_date": "2014-12-01 00:00:00",
+    "cbo": 9,
+    "lcom": 114,
+    "loc": 154,
+    "wmc": 43
+  },
+  {
+    "id": 134781,
+    "class_name": "org.languagetool.rules.ca.MorfologikCatalanSpellerRule",
+    "commit_date": "2014-12-01 00:00:00",
+    "cbo": 2,
+    "lcom": 6,
+    "loc": 16,
+    "wmc": 4
+  },
+  {
+    "id": 134662,
+    "class_name": "org.languagetool.rules.de.WordCoherencyRuleTest",
+    "commit_date": "2014-12-01 00:00:00",
+    "cbo": 6,
+    "lcom": 10,
+    "loc": 85,
+    "wmc": 5
+  },
+  {
+    "id": 134751,
+    "class_name": "org.languagetool.rules.en.AvsAnRuleTest",
+    "commit_date": "2014-12-01 00:00:00",
+    "cbo": 6,
+    "lcom": 0,
+    "loc": 93,
+    "wmc": 6
+  },
+  {
+    "id": 134823,
+    "class_name": "org.languagetool.rules.en.MorfologikNewZealandSpellerRuleTest",
+    "commit_date": "2014-12-01 00:00:00",
+    "cbo": 9,
+    "lcom": 1,
+    "loc": 30,
+    "wmc": 2
+  },
+  {
+    "id": 134556,
+    "class_name": "org.languagetool.rules.en.MorfologikSouthAfricanSpellerRuleTest",
+    "commit_date": "2014-12-01 00:00:00",
+    "cbo": 9,
+    "lcom": 1,
+    "loc": 30,
+    "wmc": 2
+  },
+  {
+    "id": 134738,
+    "class_name": "org.languagetool.rules.fr.QuestionWhitespaceRule",
+    "commit_date": "2014-12-01 00:00:00",
+    "cbo": 5,
+    "lcom": 10,
+    "loc": 106,
+    "wmc": 38
+  },
+  {
+    "id": 134658,
+    "class_name": "org.languagetool.rules.patterns.PatternRuleXmlCreator",
+    "commit_date": "2014-12-01 00:00:00",
+    "cbo": 11,
+    "lcom": 3,
+    "loc": 61,
+    "wmc": 13
+  },
+  {
+    "id": 134801,
+    "class_name": "org.languagetool.rules.pl.CompoundRuleTest",
+    "commit_date": "2014-12-01 00:00:00",
+    "cbo": 9,
+    "lcom": 6,
+    "loc": 42,
+    "wmc": 9
+  },
+  {
+    "id": 134641,
+    "class_name": "org.languagetool.rules.pl.MorfologikPolishSpellerRule",
+    "commit_date": "2014-12-01 00:00:00",
+    "cbo": 8,
+    "lcom": 21,
+    "loc": 130,
+    "wmc": 25
+  },
+  {
+    "id": 134708,
+    "class_name": "org.languagetool.rules.SameRuleGroupFilterTest",
+    "commit_date": "2014-12-01 00:00:00",
+    "cbo": 9,
+    "lcom": 4,
+    "loc": 48,
+    "wmc": 5
+  },
+  {
+    "id": 134774,
+    "class_name": "org.languagetool.rules.uk.MorfologikUkrainianSpellerRule",
+    "commit_date": "2014-12-01 00:00:00",
+    "cbo": 3,
+    "lcom": 6,
+    "loc": 29,
+    "wmc": 10
+  },
+  {
+    "id": 134814,
+    "class_name": "org.languagetool.rules.WrongWordInContextRule",
+    "commit_date": "2014-12-01 00:00:00",
+    "cbo": 9,
+    "lcom": 64,
+    "loc": 149,
+    "wmc": 37
+  },
+  {
+    "id": 134813,
+    "class_name": "org.languagetool.rules.WrongWordInContextRule$ContextWords",
+    "commit_date": "2014-12-01 00:00:00",
+    "cbo": 1,
+    "lcom": 2,
+    "loc": 24,
+    "wmc": 5
+  },
+  {
+    "id": 134722,
+    "class_name": "org.languagetool.server.HTTPSServerTest",
+    "commit_date": "2014-12-01 00:00:00",
+    "cbo": 6,
+    "lcom": 13,
+    "loc": 80,
+    "wmc": 11
+  },
+  {
+    "id": 134820,
+    "class_name": "org.languagetool.server.HTTPSServerTesting",
+    "commit_date": "2014-12-01 00:00:00",
+    "cbo": 7,
+    "lcom": 4,
+    "loc": 78,
+    "wmc": 9
+  },
+  {
+    "id": 134819,
+    "class_name": "org.languagetool.server.HTTPSServerTesting$TestRunnable",
+    "commit_date": "2014-12-01 00:00:00",
+    "cbo": 1,
+    "lcom": 0,
+    "loc": 16,
+    "wmc": 4
+  },
+  {
+    "id": 134630,
+    "class_name": "org.languagetool.server.LanguageToolHttpHandler",
+    "commit_date": "2014-12-01 00:00:00",
+    "cbo": 15,
+    "lcom": 314,
+    "loc": 416,
+    "wmc": 92
+  },
+  {
+    "id": 134629,
+    "class_name": "org.languagetool.server.LanguageToolHttpHandler$Anonymous1",
+    "commit_date": "2014-12-01 00:00:00",
+    "cbo": 2,
+    "lcom": 0,
+    "loc": 5,
+    "wmc": 1
+  },
+  {
+    "id": 134628,
+    "class_name": "org.languagetool.server.LanguageToolHttpHandler$Anonymous2",
+    "commit_date": "2014-12-01 00:00:00",
+    "cbo": 1,
+    "lcom": 0,
+    "loc": 5,
+    "wmc": 1
+  },
+  {
+    "id": 134627,
+    "class_name": "org.languagetool.server.LanguageToolHttpHandler$QueryParams",
+    "commit_date": "2014-12-01 00:00:00",
+    "cbo": 0,
+    "lcom": 0,
+    "loc": 12,
+    "wmc": 1
+  },
+  {
+    "id": 134673,
+    "class_name": "org.languagetool.tagging.de.GermanTagger",
+    "commit_date": "2014-12-01 00:00:00",
+    "cbo": 6,
+    "lcom": 43,
+    "loc": 90,
+    "wmc": 23
+  },
+  {
+    "id": 134780,
+    "class_name": "org.languagetool.tagging.disambiguation.ca.CatalanHybridDisambiguator",
+    "commit_date": "2014-12-01 00:00:00",
+    "cbo": 5,
+    "lcom": 0,
+    "loc": 7,
+    "wmc": 1
+  },
+  {
+    "id": 134578,
+    "class_name": "org.languagetool.tagging.disambiguation.rules.ro.RomanianRuleDisambiguatorTest",
+    "commit_date": "2014-12-01 00:00:00",
+    "cbo": 9,
+    "lcom": 0,
+    "loc": 31,
+    "wmc": 4
+  },
+  {
+    "id": 134723,
+    "class_name": "org.languagetool.dev.dumpcheck.SentenceSourceIndexer",
+    "commit_date": "2015-12-01 00:00:00",
+    "cbo": 11,
+    "lcom": 0,
+    "loc": 75,
+    "wmc": 12
+  },
+  {
+    "id": 134733,
+    "class_name": "org.languagetool.dev.FrequencyIndexCreatorTest",
+    "commit_date": "2015-12-01 00:00:00",
+    "cbo": 10,
+    "lcom": 1,
+    "loc": 35,
+    "wmc": 7
+  },
+  {
+    "id": 134585,
+    "class_name": "org.languagetool.dev.index.Indexer",
+    "commit_date": "2015-12-01 00:00:00",
+    "cbo": 16,
+    "lcom": 52,
+    "loc": 114,
+    "wmc": 22
+  },
+  {
+    "id": 134792,
+    "class_name": "org.languagetool.dev.index.LanguageToolFilter",
+    "commit_date": "2015-12-01 00:00:00",
+    "cbo": 11,
+    "lcom": 0,
+    "loc": 96,
+    "wmc": 18
+  },
+  {
+    "id": 134572,
+    "class_name": "org.languagetool.dev.index.PatternRuleQueryBuilder",
+    "commit_date": "2015-12-01 00:00:00",
+    "cbo": 22,
+    "lcom": 81,
+    "loc": 189,
+    "wmc": 56
+  },
+  {
+    "id": 134711,
+    "class_name": "org.languagetool.gui.Tools",
+    "commit_date": "2015-12-01 00:00:00",
+    "cbo": 4,
+    "lcom": 120,
+    "loc": 148,
+    "wmc": 41
+  },
+  {
+    "id": 134712,
+    "class_name": "org.languagetool.gui.Tools$Anonymous1",
+    "commit_date": "2015-12-01 00:00:00",
+    "cbo": 1,
+    "lcom": 0,
+    "loc": 14,
+    "wmc": 4
+  },
+  {
+    "id": 134773,
+    "class_name": "org.languagetool.language.AmericanEnglish",
+    "commit_date": "2015-12-01 00:00:00",
+    "cbo": 3,
+    "lcom": 3,
+    "loc": 14,
+    "wmc": 3
+  },
+  {
+    "id": 134598,
+    "class_name": "org.languagetool.language.Catalan",
+    "commit_date": "2015-12-01 00:00:00",
+    "cbo": 31,
+    "lcom": 55,
+    "loc": 56,
+    "wmc": 16
+  },
+  {
+    "id": 134546,
+    "class_name": "org.languagetool.language.Esperanto",
+    "commit_date": "2015-12-01 00:00:00",
+    "cbo": 20,
+    "lcom": 36,
+    "loc": 41,
+    "wmc": 12
+  },
+  {
+    "id": 134762,
+    "class_name": "org.languagetool.language.Galician",
+    "commit_date": "2015-12-01 00:00:00",
+    "cbo": 22,
+    "lcom": 45,
+    "loc": 52,
+    "wmc": 15
+  },
+  {
+    "id": 134589,
+    "class_name": "org.languagetool.language.Lithuanian",
+    "commit_date": "2015-12-01 00:00:00",
+    "cbo": 13,
+    "lcom": 21,
+    "loc": 31,
+    "wmc": 9
+  },
+  {
+    "id": 134559,
+    "class_name": "org.languagetool.language.Polish",
+    "commit_date": "2015-12-01 00:00:00",
+    "cbo": 25,
+    "lcom": 45,
+    "loc": 53,
+    "wmc": 15
+  },
+  {
+    "id": 134757,
+    "class_name": "org.languagetool.language.Slovenian",
+    "commit_date": "2015-12-01 00:00:00",
+    "cbo": 12,
+    "lcom": 15,
+    "loc": 24,
+    "wmc": 7
+  },
+  {
+    "id": 134694,
+    "class_name": "org.languagetool.language.Tagalog",
+    "commit_date": "2015-12-01 00:00:00",
+    "cbo": 15,
+    "lcom": 28,
+    "loc": 38,
+    "wmc": 11
+  },
+  {
+    "id": 134663,
+    "class_name": "org.languagetool.rules.br.TopoReplaceRule",
+    "commit_date": "2015-12-01 00:00:00",
+    "cbo": 9,
+    "lcom": 114,
+    "loc": 140,
+    "wmc": 40
+  },
+  {
+    "id": 134683,
+    "class_name": "org.languagetool.rules.de.WordCoherencyRuleTest",
+    "commit_date": "2015-12-01 00:00:00",
+    "cbo": 6,
+    "lcom": 10,
+    "loc": 74,
+    "wmc": 5
+  },
+  {
+    "id": 134783,
+    "class_name": "org.languagetool.rules.en.AvsAnRuleTest",
+    "commit_date": "2015-12-01 00:00:00",
+    "cbo": 10,
+    "lcom": 0,
+    "loc": 117,
+    "wmc": 10
+  },
+  {
+    "id": 134554,
+    "class_name": "org.languagetool.rules.en.MorfologikSouthAfricanSpellerRuleTest",
+    "commit_date": "2015-12-01 00:00:00",
+    "cbo": 9,
+    "lcom": 1,
+    "loc": 30,
+    "wmc": 2
+  },
+  {
+    "id": 134771,
+    "class_name": "org.languagetool.rules.fr.QuestionWhitespaceRule",
+    "commit_date": "2015-12-01 00:00:00",
+    "cbo": 5,
+    "lcom": 10,
+    "loc": 106,
+    "wmc": 38
+  },
+  {
+    "id": 134808,
+    "class_name": "org.languagetool.rules.ngrams.ConfusionProbabilityRuleTest",
+    "commit_date": "2015-12-01 00:00:00",
+    "cbo": 11,
+    "lcom": 0,
+    "loc": 104,
+    "wmc": 9
+  },
+  {
+    "id": 134807,
+    "class_name": "org.languagetool.rules.ngrams.ConfusionProbabilityRuleTest$Anonymous1",
+    "commit_date": "2015-12-01 00:00:00",
+    "cbo": 0,
+    "lcom": 0,
+    "loc": 5,
+    "wmc": 1
+  },
+  {
+    "id": 134806,
+    "class_name": "org.languagetool.rules.ngrams.ConfusionProbabilityRuleTest$FakeLanguageModel",
+    "commit_date": "2015-12-01 00:00:00",
+    "cbo": 2,
+    "lcom": 9,
+    "loc": 33,
+    "wmc": 8
+  },
+  {
+    "id": 134809,
+    "class_name": "org.languagetool.rules.ngrams.ConfusionProbabilityRuleTest$FakeRule",
+    "commit_date": "2015-12-01 00:00:00",
+    "cbo": 4,
+    "lcom": 0,
+    "loc": 5,
+    "wmc": 1
+  },
+  {
+    "id": 134671,
+    "class_name": "org.languagetool.rules.patterns.PatternRuleXmlCreator",
+    "commit_date": "2015-12-01 00:00:00",
+    "cbo": 11,
+    "lcom": 3,
+    "loc": 61,
+    "wmc": 13
+  },
+  {
+    "id": 134754,
+    "class_name": "org.languagetool.rules.patterns.RegexPatternRule",
+    "commit_date": "2015-12-01 00:00:00",
+    "cbo": 7,
+    "lcom": 14,
+    "loc": 99,
+    "wmc": 18
+  },
+  {
+    "id": 134655,
+    "class_name": "org.languagetool.rules.pl.MorfologikPolishSpellerRule",
+    "commit_date": "2015-12-01 00:00:00",
+    "cbo": 9,
+    "lcom": 21,
+    "loc": 130,
+    "wmc": 26
+  },
+  {
+    "id": 134731,
+    "class_name": "org.languagetool.rules.SameRuleGroupFilterTest",
+    "commit_date": "2015-12-01 00:00:00",
+    "cbo": 9,
+    "lcom": 4,
+    "loc": 48,
+    "wmc": 5
+  },
+  {
+    "id": 134744,
+    "class_name": "org.languagetool.server.HTTPSServerTest",
+    "commit_date": "2015-12-01 00:00:00",
+    "cbo": 6,
+    "lcom": 13,
+    "loc": 83,
+    "wmc": 12
+  },
+  {
+    "id": 134642,
+    "class_name": "org.languagetool.server.LanguageToolHttpHandler",
+    "commit_date": "2015-12-01 00:00:00",
+    "cbo": 17,
+    "lcom": 428,
+    "loc": 446,
+    "wmc": 102
+  },
+  {
+    "id": 134643,
+    "class_name": "org.languagetool.server.LanguageToolHttpHandler$Anonymous1",
+    "commit_date": "2015-12-01 00:00:00",
+    "cbo": 2,
+    "lcom": 0,
+    "loc": 5,
+    "wmc": 1
+  },
+  {
+    "id": 134644,
+    "class_name": "org.languagetool.server.LanguageToolHttpHandler$QueryParams",
+    "commit_date": "2015-12-01 00:00:00",
+    "cbo": 0,
+    "lcom": 0,
+    "loc": 12,
+    "wmc": 1
+  },
+  {
+    "id": 134693,
+    "class_name": "org.languagetool.tagging.de.GermanTagger",
+    "commit_date": "2015-12-01 00:00:00",
+    "cbo": 7,
+    "lcom": 43,
+    "loc": 91,
+    "wmc": 23
+  },
+  {
+    "id": 134579,
+    "class_name": "org.languagetool.tagging.disambiguation.rules.ro.RomanianRuleDisambiguatorTest",
+    "commit_date": "2015-12-01 00:00:00",
+    "cbo": 9,
+    "lcom": 0,
+    "loc": 31,
+    "wmc": 4
+  },
+  {
+    "id": 134605,
+    "class_name": "org.languagetool.tools.RuleMatchAsXmlSerializerTest",
+    "commit_date": "2015-12-01 00:00:00",
+    "cbo": 11,
+    "lcom": 0,
+    "loc": 104,
+    "wmc": 6
+  },
+  {
+    "id": 134606,
+    "class_name": "org.languagetool.tools.RuleMatchAsXmlSerializerTest$Anonymous1",
+    "commit_date": "2015-12-01 00:00:00",
+    "cbo": 0,
+    "lcom": 0,
+    "loc": 10,
+    "wmc": 2
+  },
+  {
+    "id": 134607,
+    "class_name": "org.languagetool.tools.RuleMatchAsXmlSerializerTest$FakeRule",
+    "commit_date": "2015-12-01 00:00:00",
+    "cbo": 4,
+    "lcom": 1,
+    "loc": 8,
+    "wmc": 2
+  },
+  {
+    "id": 134706,
+    "class_name": "org.languagetool.dev.dumpcheck.SentenceSourceIndexer",
+    "commit_date": "2016-12-01 00:00:00",
+    "cbo": 14,
+    "lcom": 0,
+    "loc": 97,
+    "wmc": 17
+  },
+  {
+    "id": 134719,
+    "class_name": "org.languagetool.dev.FrequencyIndexCreatorTest",
+    "commit_date": "2016-12-01 00:00:00",
+    "cbo": 10,
+    "lcom": 1,
+    "loc": 35,
+    "wmc": 7
+  },
+  {
+    "id": 134587,
+    "class_name": "org.languagetool.dev.index.Indexer",
+    "commit_date": "2016-12-01 00:00:00",
+    "cbo": 16,
+    "lcom": 64,
+    "loc": 135,
+    "wmc": 29
+  },
+  {
+    "id": 134784,
+    "class_name": "org.languagetool.dev.index.LanguageToolFilter",
+    "commit_date": "2016-12-01 00:00:00",
+    "cbo": 11,
+    "lcom": 0,
+    "loc": 106,
+    "wmc": 19
+  },
+  {
+    "id": 134573,
+    "class_name": "org.languagetool.dev.index.PatternRuleQueryBuilder",
+    "commit_date": "2016-12-01 00:00:00",
+    "cbo": 20,
+    "lcom": 72,
+    "loc": 185,
+    "wmc": 54
+  },
+  {
+    "id": 134698,
+    "class_name": "org.languagetool.gui.Tools",
+    "commit_date": "2016-12-01 00:00:00",
+    "cbo": 7,
+    "lcom": 153,
+    "loc": 171,
+    "wmc": 48
+  },
+  {
+    "id": 134699,
+    "class_name": "org.languagetool.gui.Tools$Anonymous1",
+    "commit_date": "2016-12-01 00:00:00",
+    "cbo": 1,
+    "lcom": 0,
+    "loc": 14,
+    "wmc": 4
+  },
+  {
+    "id": 134763,
+    "class_name": "org.languagetool.language.AmericanEnglish",
+    "commit_date": "2016-12-01 00:00:00",
+    "cbo": 3,
+    "lcom": 3,
+    "loc": 14,
+    "wmc": 3
+  },
+  {
+    "id": 134599,
+    "class_name": "org.languagetool.language.Catalan",
+    "commit_date": "2016-12-01 00:00:00",
+    "cbo": 33,
+    "lcom": 78,
+    "loc": 82,
+    "wmc": 27
+  },
+  {
+    "id": 134550,
+    "class_name": "org.languagetool.language.Esperanto",
+    "commit_date": "2016-12-01 00:00:00",
+    "cbo": 21,
+    "lcom": 45,
+    "loc": 44,
+    "wmc": 13
+  },
+  {
+    "id": 134753,
+    "class_name": "org.languagetool.language.Galician",
+    "commit_date": "2016-12-01 00:00:00",
+    "cbo": 22,
+    "lcom": 45,
+    "loc": 52,
+    "wmc": 15
+  },
+  {
+    "id": 134593,
+    "class_name": "org.languagetool.language.Lithuanian",
+    "commit_date": "2016-12-01 00:00:00",
+    "cbo": 13,
+    "lcom": 21,
+    "loc": 31,
+    "wmc": 9
+  },
+  {
+    "id": 134563,
+    "class_name": "org.languagetool.language.Polish",
+    "commit_date": "2016-12-01 00:00:00",
+    "cbo": 26,
+    "lcom": 55,
+    "loc": 56,
+    "wmc": 16
+  },
+  {
+    "id": 134748,
+    "class_name": "org.languagetool.language.Slovenian",
+    "commit_date": "2016-12-01 00:00:00",
+    "cbo": 12,
+    "lcom": 15,
+    "loc": 24,
+    "wmc": 7
+  },
+  {
+    "id": 134679,
+    "class_name": "org.languagetool.language.Tagalog",
+    "commit_date": "2016-12-01 00:00:00",
+    "cbo": 15,
+    "lcom": 28,
+    "loc": 38,
+    "wmc": 11
+  },
+  {
+    "id": 134653,
+    "class_name": "org.languagetool.rules.br.TopoReplaceRule",
+    "commit_date": "2016-12-01 00:00:00",
+    "cbo": 8,
+    "lcom": 114,
+    "loc": 140,
+    "wmc": 40
+  },
+  {
+    "id": 134665,
+    "class_name": "org.languagetool.rules.de.WordCoherencyRuleTest",
+    "commit_date": "2016-12-01 00:00:00",
+    "cbo": 6,
+    "lcom": 10,
+    "loc": 74,
+    "wmc": 5
+  },
+  {
+    "id": 134776,
+    "class_name": "org.languagetool.rules.en.AvsAnRuleTest",
+    "commit_date": "2016-12-01 00:00:00",
+    "cbo": 11,
+    "lcom": 0,
+    "loc": 117,
+    "wmc": 10
+  },
+  {
+    "id": 134555,
+    "class_name": "org.languagetool.rules.en.MorfologikSouthAfricanSpellerRuleTest",
+    "commit_date": "2016-12-01 00:00:00",
+    "cbo": 9,
+    "lcom": 1,
+    "loc": 30,
+    "wmc": 2
+  },
+  {
+    "id": 134759,
+    "class_name": "org.languagetool.rules.fr.QuestionWhitespaceRule",
+    "commit_date": "2016-12-01 00:00:00",
+    "cbo": 4,
+    "lcom": 10,
+    "loc": 106,
+    "wmc": 38
+  },
+  {
+    "id": 134825,
+    "class_name": "org.languagetool.rules.ngrams.ConfusionProbabilityRule",
+    "commit_date": "2016-12-01 00:00:00",
+    "cbo": 16,
+    "lcom": 166,
+    "loc": 229,
+    "wmc": 65
+  },
+  {
+    "id": 134810,
+    "class_name": "org.languagetool.rules.ngrams.ConfusionProbabilityRuleTest",
+    "commit_date": "2016-12-01 00:00:00",
+    "cbo": 10,
+    "lcom": 0,
+    "loc": 72,
+    "wmc": 9
+  },
+  {
+    "id": 134812,
+    "class_name": "org.languagetool.rules.ngrams.ConfusionProbabilityRuleTest$Anonymous1",
+    "commit_date": "2016-12-01 00:00:00",
+    "cbo": 0,
+    "lcom": 0,
+    "loc": 5,
+    "wmc": 1
+  },
+  {
+    "id": 134811,
+    "class_name": "org.languagetool.rules.ngrams.ConfusionProbabilityRuleTest$FakeRule",
+    "commit_date": "2016-12-01 00:00:00",
+    "cbo": 4,
+    "lcom": 0,
+    "loc": 5,
+    "wmc": 1
+  },
+  {
+    "id": 134659,
+    "class_name": "org.languagetool.rules.patterns.PatternRuleXmlCreator",
+    "commit_date": "2016-12-01 00:00:00",
+    "cbo": 11,
+    "lcom": 3,
+    "loc": 61,
+    "wmc": 13
+  },
+  {
+    "id": 134745,
+    "class_name": "org.languagetool.rules.patterns.RegexPatternRule",
+    "commit_date": "2016-12-01 00:00:00",
+    "cbo": 7,
+    "lcom": 14,
+    "loc": 99,
+    "wmc": 18
+  },
+  {
+    "id": 134645,
+    "class_name": "org.languagetool.rules.pl.MorfologikPolishSpellerRule",
+    "commit_date": "2016-12-01 00:00:00",
+    "cbo": 8,
+    "lcom": 21,
+    "loc": 130,
+    "wmc": 26
+  },
+  {
+    "id": 134710,
+    "class_name": "org.languagetool.rules.SameRuleGroupFilterTest",
+    "commit_date": "2016-12-01 00:00:00",
+    "cbo": 10,
+    "lcom": 4,
+    "loc": 48,
+    "wmc": 5
+  },
+  {
+    "id": 134725,
+    "class_name": "org.languagetool.server.ApiV2",
+    "commit_date": "2016-12-01 00:00:00",
+    "cbo": 8,
+    "lcom": 1,
+    "loc": 52,
+    "wmc": 8
+  },
+  {
+    "id": 134736,
+    "class_name": "org.languagetool.server.HTTPSServerTest",
+    "commit_date": "2016-12-01 00:00:00",
+    "cbo": 6,
+    "lcom": 13,
+    "loc": 83,
+    "wmc": 12
+  },
+  {
+    "id": 134632,
+    "class_name": "org.languagetool.server.LanguageToolHttpHandler",
+    "commit_date": "2016-12-01 00:00:00",
+    "cbo": 16,
+    "lcom": 39,
+    "loc": 263,
+    "wmc": 58
+  },
+  {
+    "id": 134677,
+    "class_name": "org.languagetool.tagging.de.GermanTagger",
+    "commit_date": "2016-12-01 00:00:00",
+    "cbo": 7,
+    "lcom": 43,
+    "loc": 94,
+    "wmc": 25
+  },
+  {
+    "id": 134580,
+    "class_name": "org.languagetool.tagging.disambiguation.rules.ro.RomanianRuleDisambiguatorTest",
+    "commit_date": "2016-12-01 00:00:00",
+    "cbo": 10,
+    "lcom": 0,
+    "loc": 31,
+    "wmc": 4
+  },
+  {
+    "id": 134610,
+    "class_name": "org.languagetool.tools.RuleMatchAsXmlSerializerTest",
+    "commit_date": "2016-12-01 00:00:00",
+    "cbo": 12,
+    "lcom": 0,
+    "loc": 117,
+    "wmc": 7
+  },
+  {
+    "id": 134609,
+    "class_name": "org.languagetool.tools.RuleMatchAsXmlSerializerTest$Anonymous1",
+    "commit_date": "2016-12-01 00:00:00",
+    "cbo": 0,
+    "lcom": 0,
+    "loc": 10,
+    "wmc": 2
+  },
+  {
+    "id": 134608,
+    "class_name": "org.languagetool.tools.RuleMatchAsXmlSerializerTest$FakeRule",
+    "commit_date": "2016-12-01 00:00:00",
+    "cbo": 4,
+    "lcom": 1,
+    "loc": 8,
+    "wmc": 2
+  },
+  {
+    "id": 134769,
+    "class_name": "org.languagetool.dev.archive.ExampleSentenceCorrectionCreator",
+    "commit_date": "2017-12-01 00:00:00",
+    "cbo": 9,
+    "lcom": 4,
+    "loc": 100,
+    "wmc": 28
+  },
+  {
+    "id": 134777,
+    "class_name": "org.languagetool.dev.archive.StartTokenCounter",
+    "commit_date": "2017-12-01 00:00:00",
+    "cbo": 9,
+    "lcom": 1,
+    "loc": 41,
+    "wmc": 17
+  },
+  {
+    "id": 134758,
+    "class_name": "org.languagetool.dev.dumpcheck.SentenceSourceIndexer",
+    "commit_date": "2017-12-01 00:00:00",
+    "cbo": 14,
+    "lcom": 0,
+    "loc": 97,
+    "wmc": 17
+  },
+  {
+    "id": 134786,
+    "class_name": "org.languagetool.dev.FrequencyIndexCreatorTest",
+    "commit_date": "2017-12-01 00:00:00",
+    "cbo": 10,
+    "lcom": 1,
+    "loc": 35,
+    "wmc": 7
+  },
+  {
+    "id": 134588,
+    "class_name": "org.languagetool.dev.index.Indexer",
+    "commit_date": "2017-12-01 00:00:00",
+    "cbo": 16,
+    "lcom": 64,
+    "loc": 135,
+    "wmc": 29
+  },
+  {
+    "id": 134568,
+    "class_name": "org.languagetool.dev.index.PatternRuleQueryBuilder",
+    "commit_date": "2017-12-01 00:00:00",
+    "cbo": 20,
+    "lcom": 72,
+    "loc": 185,
+    "wmc": 54
+  },
+  {
+    "id": 134747,
+    "class_name": "org.languagetool.gui.Tools",
+    "commit_date": "2017-12-01 00:00:00",
+    "cbo": 8,
+    "lcom": 153,
+    "loc": 176,
+    "wmc": 50
+  },
+  {
+    "id": 134746,
+    "class_name": "org.languagetool.gui.Tools$Anonymous1",
+    "commit_date": "2017-12-01 00:00:00",
+    "cbo": 1,
+    "lcom": 0,
+    "loc": 14,
+    "wmc": 4
+  },
+  {
+    "id": 134600,
+    "class_name": "org.languagetool.language.Catalan",
+    "commit_date": "2017-12-01 00:00:00",
+    "cbo": 34,
+    "lcom": 78,
+    "loc": 88,
+    "wmc": 30
+  },
+  {
+    "id": 134549,
+    "class_name": "org.languagetool.language.Esperanto",
+    "commit_date": "2017-12-01 00:00:00",
+    "cbo": 21,
+    "lcom": 45,
+    "loc": 44,
+    "wmc": 13
+  },
+  {
+    "id": 134826,
+    "class_name": "org.languagetool.language.Galician",
+    "commit_date": "2017-12-01 00:00:00",
+    "cbo": 31,
+    "lcom": 66,
+    "loc": 96,
+    "wmc": 35
+  },
+  {
+    "id": 134592,
+    "class_name": "org.languagetool.language.Lithuanian",
+    "commit_date": "2017-12-01 00:00:00",
+    "cbo": 13,
+    "lcom": 21,
+    "loc": 31,
+    "wmc": 9
+  },
+  {
+    "id": 134562,
+    "class_name": "org.languagetool.language.Polish",
+    "commit_date": "2017-12-01 00:00:00",
+    "cbo": 26,
+    "lcom": 55,
+    "loc": 56,
+    "wmc": 16
+  },
+  {
+    "id": 134822,
+    "class_name": "org.languagetool.language.Slovenian",
+    "commit_date": "2017-12-01 00:00:00",
+    "cbo": 12,
+    "lcom": 15,
+    "loc": 24,
+    "wmc": 7
+  },
+  {
+    "id": 134707,
+    "class_name": "org.languagetool.language.Tagalog",
+    "commit_date": "2017-12-01 00:00:00",
+    "cbo": 15,
+    "lcom": 28,
+    "loc": 38,
+    "wmc": 11
+  },
+  {
+    "id": 134657,
+    "class_name": "org.languagetool.ResultCache",
+    "commit_date": "2017-12-01 00:00:00",
+    "cbo": 6,
+    "lcom": 0,
+    "loc": 32,
+    "wmc": 9
+  },
+  {
+    "id": 134669,
+    "class_name": "org.languagetool.rules.br.TopoReplaceRule",
+    "commit_date": "2017-12-01 00:00:00",
+    "cbo": 8,
+    "lcom": 99,
+    "loc": 138,
+    "wmc": 39
+  },
+  {
+    "id": 134640,
+    "class_name": "org.languagetool.rules.de.LongSentenceRule",
+    "commit_date": "2017-12-01 00:00:00",
+    "cbo": 5,
+    "lcom": 26,
+    "loc": 111,
+    "wmc": 56
+  },
+  {
+    "id": 134553,
+    "class_name": "org.languagetool.rules.en.MorfologikSouthAfricanSpellerRuleTest",
+    "commit_date": "2017-12-01 00:00:00",
+    "cbo": 9,
+    "lcom": 1,
+    "loc": 30,
+    "wmc": 2
+  },
+  {
+    "id": 134681,
+    "class_name": "org.languagetool.rules.en.WordCoherencyRuleTest",
+    "commit_date": "2017-12-01 00:00:00",
+    "cbo": 9,
+    "lcom": 1,
+    "loc": 36,
+    "wmc": 7
+  },
+  {
+    "id": 134674,
+    "class_name": "org.languagetool.rules.patterns.PatternRuleXmlCreator",
+    "commit_date": "2017-12-01 00:00:00",
+    "cbo": 11,
+    "lcom": 3,
+    "loc": 61,
+    "wmc": 13
+  },
+  {
+    "id": 134821,
+    "class_name": "org.languagetool.rules.patterns.RegexPatternRule",
+    "commit_date": "2017-12-01 00:00:00",
+    "cbo": 7,
+    "lcom": 14,
+    "loc": 104,
+    "wmc": 19
+  },
+  {
+    "id": 134652,
+    "class_name": "org.languagetool.rules.pl.MorfologikPolishSpellerRule",
+    "commit_date": "2017-12-01 00:00:00",
+    "cbo": 9,
+    "lcom": 21,
+    "loc": 130,
+    "wmc": 26
+  },
+  {
+    "id": 134721,
+    "class_name": "org.languagetool.rules.ru.RussianVerbConjugationRule",
+    "commit_date": "2017-12-01 00:00:00",
+    "cbo": 8,
+    "lcom": 28,
+    "loc": 73,
+    "wmc": 23
+  },
+  {
+    "id": 134782,
+    "class_name": "org.languagetool.rules.SameRuleGroupFilterTest",
+    "commit_date": "2017-12-01 00:00:00",
+    "cbo": 10,
+    "lcom": 4,
+    "loc": 48,
+    "wmc": 5
+  },
+  {
+    "id": 134804,
+    "class_name": "org.languagetool.server.ApiV2",
+    "commit_date": "2017-12-01 00:00:00",
+    "cbo": 13,
+    "lcom": 15,
+    "loc": 92,
+    "wmc": 18
+  },
+  {
+    "id": 134815,
+    "class_name": "org.languagetool.server.HTTPSServerTest",
+    "commit_date": "2017-12-01 00:00:00",
+    "cbo": 6,
+    "lcom": 13,
+    "loc": 83,
+    "wmc": 12
+  },
+  {
+    "id": 134631,
+    "class_name": "org.languagetool.server.LanguageToolHttpHandler",
+    "commit_date": "2017-12-01 00:00:00",
+    "cbo": 17,
+    "lcom": 65,
+    "loc": 269,
+    "wmc": 62
+  },
+  {
+    "id": 134705,
+    "class_name": "org.languagetool.tagging.de.GermanTagger",
+    "commit_date": "2017-12-01 00:00:00",
+    "cbo": 9,
+    "lcom": 97,
+    "loc": 210,
+    "wmc": 66
+  },
+  {
+    "id": 134575,
+    "class_name": "org.languagetool.tagging.disambiguation.rules.ro.RomanianRuleDisambiguatorTest",
+    "commit_date": "2017-12-01 00:00:00",
+    "cbo": 10,
+    "lcom": 0,
+    "loc": 31,
+    "wmc": 4
+  },
+  {
+    "id": 134613,
+    "class_name": "org.languagetool.tools.RuleMatchAsXmlSerializerTest",
+    "commit_date": "2017-12-01 00:00:00",
+    "cbo": 12,
+    "lcom": 0,
+    "loc": 112,
+    "wmc": 7
+  },
+  {
+    "id": 134611,
+    "class_name": "org.languagetool.tools.RuleMatchAsXmlSerializerTest$Anonymous1",
+    "commit_date": "2017-12-01 00:00:00",
+    "cbo": 0,
+    "lcom": 0,
+    "loc": 5,
+    "wmc": 1
+  },
+  {
+    "id": 134612,
+    "class_name": "org.languagetool.tools.RuleMatchAsXmlSerializerTest$FakeRule",
+    "commit_date": "2017-12-01 00:00:00",
+    "cbo": 4,
+    "lcom": 1,
+    "loc": 8,
+    "wmc": 2
+  },
+  {
+    "id": 134785,
+    "class_name": "org.languagetool.dev.archive.ExampleSentenceCorrectionCreator",
+    "commit_date": "2018-12-01 00:00:00",
+    "cbo": 9,
+    "lcom": 4,
+    "loc": 100,
+    "wmc": 28
+  },
+  {
+    "id": 134789,
+    "class_name": "org.languagetool.dev.archive.StartTokenCounter",
+    "commit_date": "2018-12-01 00:00:00",
+    "cbo": 9,
+    "lcom": 1,
+    "loc": 41,
+    "wmc": 17
+  },
+  {
+    "id": 134817,
+    "class_name": "org.languagetool.dev.bigdata.ProhibitedCompoundRuleEvaluator",
+    "commit_date": "2018-12-01 00:00:00",
+    "cbo": 19,
+    "lcom": 21,
+    "loc": 201,
+    "wmc": 46
+  },
+  {
+    "id": 134779,
+    "class_name": "org.languagetool.dev.dumpcheck.SentenceSourceIndexer",
+    "commit_date": "2018-12-01 00:00:00",
+    "cbo": 15,
+    "lcom": 0,
+    "loc": 115,
+    "wmc": 19
+  },
+  {
+    "id": 134794,
+    "class_name": "org.languagetool.dev.FrequencyIndexCreatorTest",
+    "commit_date": "2018-12-01 00:00:00",
+    "cbo": 10,
+    "lcom": 1,
+    "loc": 35,
+    "wmc": 7
+  },
+  {
+    "id": 134591,
+    "class_name": "org.languagetool.dev.index.Indexer",
+    "commit_date": "2018-12-01 00:00:00",
+    "cbo": 16,
+    "lcom": 81,
+    "loc": 160,
+    "wmc": 37
+  },
+  {
+    "id": 134569,
+    "class_name": "org.languagetool.dev.index.PatternRuleQueryBuilder",
+    "commit_date": "2018-12-01 00:00:00",
+    "cbo": 20,
+    "lcom": 72,
+    "loc": 185,
+    "wmc": 54
+  },
+  {
+    "id": 134768,
+    "class_name": "org.languagetool.gui.Tools",
+    "commit_date": "2018-12-01 00:00:00",
+    "cbo": 8,
+    "lcom": 190,
+    "loc": 196,
+    "wmc": 58
+  },
+  {
+    "id": 134767,
+    "class_name": "org.languagetool.gui.Tools$Anonymous1",
+    "commit_date": "2018-12-01 00:00:00",
+    "cbo": 1,
+    "lcom": 0,
+    "loc": 7,
+    "wmc": 2
+  },
+  {
+    "id": 134602,
+    "class_name": "org.languagetool.language.Catalan",
+    "commit_date": "2018-12-01 00:00:00",
+    "cbo": 38,
+    "lcom": 78,
+    "loc": 90,
+    "wmc": 31
+  },
+  {
+    "id": 134544,
+    "class_name": "org.languagetool.language.Esperanto",
+    "commit_date": "2018-12-01 00:00:00",
+    "cbo": 22,
+    "lcom": 45,
+    "loc": 44,
+    "wmc": 13
+  },
+  {
+    "id": 134596,
+    "class_name": "org.languagetool.language.Lithuanian",
+    "commit_date": "2018-12-01 00:00:00",
+    "cbo": 14,
+    "lcom": 21,
+    "loc": 31,
+    "wmc": 9
+  },
+  {
+    "id": 134565,
+    "class_name": "org.languagetool.language.Polish",
+    "commit_date": "2018-12-01 00:00:00",
+    "cbo": 27,
+    "lcom": 55,
+    "loc": 56,
+    "wmc": 16
+  },
+  {
+    "id": 134730,
+    "class_name": "org.languagetool.language.Tagalog",
+    "commit_date": "2018-12-01 00:00:00",
+    "cbo": 16,
+    "lcom": 28,
+    "loc": 38,
+    "wmc": 11
+  },
+  {
+    "id": 134666,
+    "class_name": "org.languagetool.ResultCache",
+    "commit_date": "2018-12-01 00:00:00",
+    "cbo": 8,
+    "lcom": 0,
+    "loc": 51,
+    "wmc": 12
+  },
+  {
+    "id": 134668,
+    "class_name": "org.languagetool.ResultCache$MatchesWeigher",
+    "commit_date": "2018-12-01 00:00:00",
+    "cbo": 3,
+    "lcom": 0,
+    "loc": 5,
+    "wmc": 1
+  },
+  {
+    "id": 134667,
+    "class_name": "org.languagetool.ResultCache$SentenceWeigher",
+    "commit_date": "2018-12-01 00:00:00",
+    "cbo": 3,
+    "lcom": 0,
+    "loc": 5,
+    "wmc": 1
+  },
+  {
+    "id": 134680,
+    "class_name": "org.languagetool.rules.br.TopoReplaceRule",
+    "commit_date": "2018-12-01 00:00:00",
+    "cbo": 8,
+    "lcom": 99,
+    "loc": 138,
+    "wmc": 39
+  },
+  {
+    "id": 134650,
+    "class_name": "org.languagetool.rules.de.LongSentenceRule",
+    "commit_date": "2018-12-01 00:00:00",
+    "cbo": 6,
+    "lcom": 26,
+    "loc": 123,
+    "wmc": 64
+  },
+  {
+    "id": 134557,
+    "class_name": "org.languagetool.rules.en.MorfologikSouthAfricanSpellerRuleTest",
+    "commit_date": "2018-12-01 00:00:00",
+    "cbo": 10,
+    "lcom": 3,
+    "loc": 40,
+    "wmc": 5
+  },
+  {
+    "id": 134697,
+    "class_name": "org.languagetool.rules.en.WordCoherencyRuleTest",
+    "commit_date": "2018-12-01 00:00:00",
+    "cbo": 9,
+    "lcom": 1,
+    "loc": 37,
+    "wmc": 7
+  },
+  {
+    "id": 134691,
+    "class_name": "org.languagetool.rules.patterns.PatternRuleXmlCreator",
+    "commit_date": "2018-12-01 00:00:00",
+    "cbo": 11,
+    "lcom": 3,
+    "loc": 61,
+    "wmc": 13
+  },
+  {
+    "id": 134660,
+    "class_name": "org.languagetool.rules.pl.MorfologikPolishSpellerRule",
+    "commit_date": "2018-12-01 00:00:00",
+    "cbo": 10,
+    "lcom": 19,
+    "loc": 143,
+    "wmc": 28
+  },
+  {
+    "id": 134737,
+    "class_name": "org.languagetool.rules.ru.RussianVerbConjugationRule",
+    "commit_date": "2018-12-01 00:00:00",
+    "cbo": 8,
+    "lcom": 28,
+    "loc": 76,
+    "wmc": 24
+  },
+  {
+    "id": 134793,
+    "class_name": "org.languagetool.rules.SameRuleGroupFilterTest",
+    "commit_date": "2018-12-01 00:00:00",
+    "cbo": 10,
+    "lcom": 4,
+    "loc": 48,
+    "wmc": 5
+  },
+  {
+    "id": 134639,
+    "class_name": "org.languagetool.server.LanguageToolHttpHandler",
+    "commit_date": "2018-12-01 00:00:00",
+    "cbo": 22,
+    "lcom": 117,
+    "loc": 351,
+    "wmc": 91
+  },
+  {
+    "id": 134726,
+    "class_name": "org.languagetool.tagging.de.GermanTagger",
+    "commit_date": "2018-12-01 00:00:00",
+    "cbo": 9,
+    "lcom": 112,
+    "loc": 256,
+    "wmc": 85
+  },
+  {
+    "id": 134577,
+    "class_name": "org.languagetool.tagging.disambiguation.rules.ro.RomanianRuleDisambiguatorTest",
+    "commit_date": "2018-12-01 00:00:00",
+    "cbo": 10,
+    "lcom": 0,
+    "loc": 31,
+    "wmc": 4
+  },
+  {
+    "id": 134615,
+    "class_name": "org.languagetool.tools.RuleMatchAsXmlSerializerTest",
+    "commit_date": "2018-12-01 00:00:00",
+    "cbo": 12,
+    "lcom": 0,
+    "loc": 112,
+    "wmc": 7
+  },
+  {
+    "id": 134616,
+    "class_name": "org.languagetool.tools.RuleMatchAsXmlSerializerTest$Anonymous1",
+    "commit_date": "2018-12-01 00:00:00",
+    "cbo": 0,
+    "lcom": 0,
+    "loc": 5,
+    "wmc": 1
+  },
+  {
+    "id": 134614,
+    "class_name": "org.languagetool.tools.RuleMatchAsXmlSerializerTest$FakeRule",
+    "commit_date": "2018-12-01 00:00:00",
+    "cbo": 4,
+    "lcom": 1,
+    "loc": 8,
+    "wmc": 2
+  },
+  {
+    "id": 134796,
+    "class_name": "org.languagetool.dev.archive.ExampleSentenceCorrectionCreator",
+    "commit_date": "2019-12-01 00:00:00",
+    "cbo": 9,
+    "lcom": 4,
+    "loc": 100,
+    "wmc": 28
+  },
+  {
+    "id": 134797,
+    "class_name": "org.languagetool.dev.archive.StartTokenCounter",
+    "commit_date": "2019-12-01 00:00:00",
+    "cbo": 9,
+    "lcom": 1,
+    "loc": 41,
+    "wmc": 17
+  },
+  {
+    "id": 134818,
+    "class_name": "org.languagetool.dev.bigdata.ProhibitedCompoundRuleEvaluator",
+    "commit_date": "2019-12-01 00:00:00",
+    "cbo": 19,
+    "lcom": 21,
+    "loc": 201,
+    "wmc": 46
+  },
+  {
+    "id": 134795,
+    "class_name": "org.languagetool.dev.dumpcheck.SentenceSourceIndexer",
+    "commit_date": "2019-12-01 00:00:00",
+    "cbo": 14,
+    "lcom": 0,
+    "loc": 102,
+    "wmc": 18
+  },
+  {
+    "id": 134799,
+    "class_name": "org.languagetool.dev.FrequencyIndexCreatorTest",
+    "commit_date": "2019-12-01 00:00:00",
+    "cbo": 10,
+    "lcom": 1,
+    "loc": 35,
+    "wmc": 7
+  },
+  {
+    "id": 134604,
+    "class_name": "org.languagetool.dev.index.Indexer",
+    "commit_date": "2019-12-01 00:00:00",
+    "cbo": 16,
+    "lcom": 81,
+    "loc": 162,
+    "wmc": 38
+  },
+  {
+    "id": 134584,
+    "class_name": "org.languagetool.dev.index.PatternRuleQueryBuilder",
+    "commit_date": "2019-12-01 00:00:00",
+    "cbo": 20,
+    "lcom": 75,
+    "loc": 180,
+    "wmc": 54
+  },
+  {
+    "id": 134787,
+    "class_name": "org.languagetool.gui.Tools",
+    "commit_date": "2019-12-01 00:00:00",
+    "cbo": 8,
+    "lcom": 190,
+    "loc": 196,
+    "wmc": 58
+  },
+  {
+    "id": 134788,
+    "class_name": "org.languagetool.gui.Tools$Anonymous1",
+    "commit_date": "2019-12-01 00:00:00",
+    "cbo": 1,
+    "lcom": 0,
+    "loc": 7,
+    "wmc": 2
+  },
+  {
+    "id": 134625,
+    "class_name": "org.languagetool.language.Catalan",
+    "commit_date": "2019-12-01 00:00:00",
+    "cbo": 38,
+    "lcom": 78,
+    "loc": 94,
+    "wmc": 33
+  },
+  {
+    "id": 134548,
+    "class_name": "org.languagetool.language.Esperanto",
+    "commit_date": "2019-12-01 00:00:00",
+    "cbo": 22,
+    "lcom": 45,
+    "loc": 44,
+    "wmc": 13
+  },
+  {
+    "id": 134622,
+    "class_name": "org.languagetool.language.Lithuanian",
+    "commit_date": "2019-12-01 00:00:00",
+    "cbo": 14,
+    "lcom": 21,
+    "loc": 31,
+    "wmc": 9
+  },
+  {
+    "id": 134571,
+    "class_name": "org.languagetool.language.Polish",
+    "commit_date": "2019-12-01 00:00:00",
+    "cbo": 27,
+    "lcom": 55,
+    "loc": 56,
+    "wmc": 16
+  },
+  {
+    "id": 134752,
+    "class_name": "org.languagetool.language.Tagalog",
+    "commit_date": "2019-12-01 00:00:00",
+    "cbo": 16,
+    "lcom": 28,
+    "loc": 38,
+    "wmc": 11
+  },
+  {
+    "id": 134566,
+    "class_name": "org.languagetool.openoffice.SwJLanguageTool",
+    "commit_date": "2019-12-01 00:00:00",
+    "cbo": 11,
+    "lcom": 0,
+    "loc": 178,
+    "wmc": 43
+  },
+  {
+    "id": 134688,
+    "class_name": "org.languagetool.ResultCache",
+    "commit_date": "2019-12-01 00:00:00",
+    "cbo": 8,
+    "lcom": 0,
+    "loc": 51,
+    "wmc": 12
+  },
+  {
+    "id": 134689,
+    "class_name": "org.languagetool.ResultCache$MatchesWeigher",
+    "commit_date": "2019-12-01 00:00:00",
+    "cbo": 3,
+    "lcom": 0,
+    "loc": 5,
+    "wmc": 1
+  },
+  {
+    "id": 134687,
+    "class_name": "org.languagetool.ResultCache$SentenceWeigher",
+    "commit_date": "2019-12-01 00:00:00",
+    "cbo": 3,
+    "lcom": 0,
+    "loc": 5,
+    "wmc": 1
+  },
+  {
+    "id": 134701,
+    "class_name": "org.languagetool.rules.br.TopoReplaceRule",
+    "commit_date": "2019-12-01 00:00:00",
+    "cbo": 8,
+    "lcom": 64,
+    "loc": 131,
+    "wmc": 37
+  },
+  {
+    "id": 134618,
+    "class_name": "org.languagetool.rules.de.AgreementRule2",
+    "commit_date": "2019-12-01 00:00:00",
+    "cbo": 11,
+    "lcom": 24,
+    "loc": 64,
+    "wmc": 21
+  },
+  {
+    "id": 134670,
+    "class_name": "org.languagetool.rules.de.LongSentenceRule",
+    "commit_date": "2019-12-01 00:00:00",
+    "cbo": 6,
+    "lcom": 26,
+    "loc": 75,
+    "wmc": 35
+  },
+  {
+    "id": 134561,
+    "class_name": "org.languagetool.rules.en.MorfologikSouthAfricanSpellerRuleTest",
+    "commit_date": "2019-12-01 00:00:00",
+    "cbo": 10,
+    "lcom": 3,
+    "loc": 41,
+    "wmc": 5
+  },
+  {
+    "id": 134720,
+    "class_name": "org.languagetool.rules.en.WordCoherencyRuleTest",
+    "commit_date": "2019-12-01 00:00:00",
+    "cbo": 9,
+    "lcom": 1,
+    "loc": 37,
+    "wmc": 7
+  },
+  {
+    "id": 134709,
+    "class_name": "org.languagetool.rules.patterns.PatternRuleXmlCreator",
+    "commit_date": "2019-12-01 00:00:00",
+    "cbo": 11,
+    "lcom": 3,
+    "loc": 61,
+    "wmc": 13
+  },
+  {
+    "id": 134684,
+    "class_name": "org.languagetool.rules.pl.MorfologikPolishSpellerRule",
+    "commit_date": "2019-12-01 00:00:00",
+    "cbo": 10,
+    "lcom": 19,
+    "loc": 143,
+    "wmc": 29
+  },
+  {
+    "id": 134761,
+    "class_name": "org.languagetool.rules.ru.RussianVerbConjugationRule",
+    "commit_date": "2019-12-01 00:00:00",
+    "cbo": 8,
+    "lcom": 28,
+    "loc": 76,
+    "wmc": 24
+  },
+  {
+    "id": 134798,
+    "class_name": "org.languagetool.rules.SameRuleGroupFilterTest",
+    "commit_date": "2019-12-01 00:00:00",
+    "cbo": 10,
+    "lcom": 4,
+    "loc": 48,
+    "wmc": 5
+  },
+  {
+    "id": 134661,
+    "class_name": "org.languagetool.server.LanguageToolHttpHandler",
+    "commit_date": "2019-12-01 00:00:00",
+    "cbo": 26,
+    "lcom": 76,
+    "loc": 355,
+    "wmc": 92
+  },
+  {
+    "id": 134749,
+    "class_name": "org.languagetool.tagging.de.GermanTagger",
+    "commit_date": "2019-12-01 00:00:00",
+    "cbo": 9,
+    "lcom": 112,
+    "loc": 257,
+    "wmc": 85
+  },
+  {
+    "id": 134594,
+    "class_name": "org.languagetool.tagging.disambiguation.rules.ro.RomanianRuleDisambiguatorTest",
+    "commit_date": "2019-12-01 00:00:00",
+    "cbo": 10,
+    "lcom": 0,
+    "loc": 31,
+    "wmc": 4
+  },
+  {
+    "id": 134636,
+    "class_name": "org.languagetool.tools.RuleMatchAsXmlSerializerTest",
+    "commit_date": "2019-12-01 00:00:00",
+    "cbo": 12,
+    "lcom": 0,
+    "loc": 112,
+    "wmc": 7
+  },
+  {
+    "id": 134635,
+    "class_name": "org.languagetool.tools.RuleMatchAsXmlSerializerTest$Anonymous1",
+    "commit_date": "2019-12-01 00:00:00",
+    "cbo": 0,
+    "lcom": 0,
+    "loc": 5,
+    "wmc": 1
+  },
+  {
+    "id": 134637,
+    "class_name": "org.languagetool.tools.RuleMatchAsXmlSerializerTest$FakeRule",
+    "commit_date": "2019-12-01 00:00:00",
+    "cbo": 4,
+    "lcom": 1,
+    "loc": 8,
+    "wmc": 2
+  },
+  {
+    "id": 134617,
+    "class_name": "org.languagetool.dev.index.Indexer",
+    "commit_date": "2020-12-01 00:00:00",
+    "cbo": 17,
+    "lcom": 81,
+    "loc": 165,
+    "wmc": 38
+  },
+  {
+    "id": 134601,
+    "class_name": "org.languagetool.dev.index.PatternRuleQueryBuilder",
+    "commit_date": "2020-12-01 00:00:00",
+    "cbo": 20,
+    "lcom": 75,
+    "loc": 177,
+    "wmc": 54
+  },
+  {
+    "id": 134634,
+    "class_name": "org.languagetool.language.Catalan",
+    "commit_date": "2020-12-01 00:00:00",
+    "cbo": 38,
+    "lcom": 171,
+    "loc": 136,
+    "wmc": 54
+  },
+  {
+    "id": 134547,
+    "class_name": "org.languagetool.language.Esperanto",
+    "commit_date": "2020-12-01 00:00:00",
+    "cbo": 24,
+    "lcom": 45,
+    "loc": 32,
+    "wmc": 10
+  },
+  {
+    "id": 134626,
+    "class_name": "org.languagetool.language.Lithuanian",
+    "commit_date": "2020-12-01 00:00:00",
+    "cbo": 15,
+    "lcom": 21,
+    "loc": 23,
+    "wmc": 7
+  },
+  {
+    "id": 134581,
+    "class_name": "org.languagetool.language.Polish",
+    "commit_date": "2020-12-01 00:00:00",
+    "cbo": 28,
+    "lcom": 66,
+    "loc": 44,
+    "wmc": 13
+  },
+  {
+    "id": 134805,
+    "class_name": "org.languagetool.language.Tagalog",
+    "commit_date": "2020-12-01 00:00:00",
+    "cbo": 17,
+    "lcom": 28,
+    "loc": 26,
+    "wmc": 8
+  },
+  {
+    "id": 134576,
+    "class_name": "org.languagetool.openoffice.SwJLanguageTool",
+    "commit_date": "2020-12-01 00:00:00",
+    "cbo": 16,
+    "lcom": 0,
+    "loc": 198,
+    "wmc": 47
+  },
+  {
+    "id": 134713,
+    "class_name": "org.languagetool.ResultCache",
+    "commit_date": "2020-12-01 00:00:00",
+    "cbo": 9,
+    "lcom": 0,
+    "loc": 61,
+    "wmc": 13
+  },
+  {
+    "id": 134716,
+    "class_name": "org.languagetool.ResultCache$MatchesWeigher",
+    "commit_date": "2020-12-01 00:00:00",
+    "cbo": 3,
+    "lcom": 0,
+    "loc": 5,
+    "wmc": 1
+  },
+  {
+    "id": 134715,
+    "class_name": "org.languagetool.ResultCache$RemoteMatchesWeigher",
+    "commit_date": "2020-12-01 00:00:00",
+    "cbo": 3,
+    "lcom": 0,
+    "loc": 5,
+    "wmc": 1
+  },
+  {
+    "id": 134714,
+    "class_name": "org.languagetool.ResultCache$SentenceWeigher",
+    "commit_date": "2020-12-01 00:00:00",
+    "cbo": 3,
+    "lcom": 0,
+    "loc": 5,
+    "wmc": 1
+  },
+  {
+    "id": 134728,
+    "class_name": "org.languagetool.rules.br.TopoReplaceRule",
+    "commit_date": "2020-12-01 00:00:00",
+    "cbo": 9,
+    "lcom": 64,
+    "loc": 131,
+    "wmc": 37
+  },
+  {
+    "id": 134624,
+    "class_name": "org.languagetool.rules.de.AgreementRule2",
+    "commit_date": "2020-12-01 00:00:00",
+    "cbo": 11,
+    "lcom": 24,
+    "loc": 65,
+    "wmc": 23
+  },
+  {
+    "id": 134682,
+    "class_name": "org.languagetool.rules.de.LongSentenceRule",
+    "commit_date": "2020-12-01 00:00:00",
+    "cbo": 6,
+    "lcom": 10,
+    "loc": 65,
+    "wmc": 32
+  },
+  {
+    "id": 134690,
+    "class_name": "org.languagetool.rules.en.EnglishForL2SpeakersFalseFriendRule",
+    "commit_date": "2020-12-01 00:00:00",
+    "cbo": 10,
+    "lcom": 0,
+    "loc": 51,
+    "wmc": 15
+  },
+  {
+    "id": 134560,
+    "class_name": "org.languagetool.rules.en.MorfologikSouthAfricanSpellerRuleTest",
+    "commit_date": "2020-12-01 00:00:00",
+    "cbo": 10,
+    "lcom": 3,
+    "loc": 41,
+    "wmc": 5
+  },
+  {
+    "id": 134750,
+    "class_name": "org.languagetool.rules.en.WordCoherencyRuleTest",
+    "commit_date": "2020-12-01 00:00:00",
+    "cbo": 9,
+    "lcom": 0,
+    "loc": 52,
+    "wmc": 7
+  },
+  {
+    "id": 134803,
+    "class_name": "org.languagetool.rules.fr.WordWithDeterminerFilter",
+    "commit_date": "2020-12-01 00:00:00",
+    "cbo": 9,
+    "lcom": 1,
+    "loc": 100,
+    "wmc": 28
+  },
+  {
+    "id": 134740,
+    "class_name": "org.languagetool.rules.patterns.PatternRuleXmlCreator",
+    "commit_date": "2020-12-01 00:00:00",
+    "cbo": 12,
+    "lcom": 3,
+    "loc": 61,
+    "wmc": 13
+  },
+  {
+    "id": 134704,
+    "class_name": "org.languagetool.rules.pl.MorfologikPolishSpellerRule",
+    "commit_date": "2020-12-01 00:00:00",
+    "cbo": 11,
+    "lcom": 19,
+    "loc": 143,
+    "wmc": 29
+  },
+  {
+    "id": 134816,
+    "class_name": "org.languagetool.rules.ru.RussianVerbConjugationRule",
+    "commit_date": "2020-12-01 00:00:00",
+    "cbo": 8,
+    "lcom": 28,
+    "loc": 87,
+    "wmc": 26
+  },
+  {
+    "id": 134675,
+    "class_name": "org.languagetool.server.LanguageToolHttpHandler",
+    "commit_date": "2020-12-01 00:00:00",
+    "cbo": 27,
+    "lcom": 72,
+    "loc": 372,
+    "wmc": 94
+  },
+  {
+    "id": 134791,
+    "class_name": "org.languagetool.tagging.de.GermanTagger",
+    "commit_date": "2020-12-01 00:00:00",
+    "cbo": 15,
+    "lcom": 126,
+    "loc": 372,
+    "wmc": 132
+  },
+  {
+    "id": 134790,
+    "class_name": "org.languagetool.tagging.de.GermanTagger$PrefixInfixVerb",
+    "commit_date": "2020-12-01 00:00:00",
+    "cbo": 0,
+    "lcom": 0,
+    "loc": 10,
+    "wmc": 1
+  },
+  {
+    "id": 134603,
+    "class_name": "org.languagetool.tagging.disambiguation.rules.ro.RomanianRuleDisambiguatorTest",
+    "commit_date": "2020-12-01 00:00:00",
+    "cbo": 10,
+    "lcom": 0,
+    "loc": 31,
+    "wmc": 4
+  },
+  {
+    "id": 134647,
+    "class_name": "org.languagetool.tools.RuleMatchAsXmlSerializerTest",
+    "commit_date": "2020-12-01 00:00:00",
+    "cbo": 12,
+    "lcom": 0,
+    "loc": 112,
+    "wmc": 7
+  },
+  {
+    "id": 134648,
+    "class_name": "org.languagetool.tools.RuleMatchAsXmlSerializerTest$Anonymous1",
+    "commit_date": "2020-12-01 00:00:00",
+    "cbo": 0,
+    "lcom": 0,
+    "loc": 5,
+    "wmc": 1
+  },
+  {
+    "id": 134649,
+    "class_name": "org.languagetool.tools.RuleMatchAsXmlSerializerTest$FakeRule",
+    "commit_date": "2020-12-01 00:00:00",
+    "cbo": 4,
+    "lcom": 1,
+    "loc": 8,
+    "wmc": 2
+  }
+]
