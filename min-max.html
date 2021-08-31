@@ -1,0 +1,106 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Complexity History Tracker</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.4.1/chart.min.js"
+      integrity="sha512-5vwN8yor2fFT9pgPS9p9R7AszYaNn0LkQElTXIsZFCL7ucT8zDCAqlQXDdaqgA1mZP47hdvztBMsIoFxq/FyyQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Complexity Tracker Projects</h2>
+      <div id="content"></div>
+      <hr />
+    </div>
+    <script type="text/javascript">
+      $(function () {
+        const projects = [
+          { project: "MPS", link: "mps/result.json" },
+          { project: "VoltoDB", link: "./voltdb/result.json" },
+          { project: "Cassandra", link: "./cassandra/result.json" },
+          { project: "Hibernate ORM", link: "./hibernate_orm/result.json" },
+          { project: "K-9", link: "./k_9/result.json" },
+          { project: "QueryDSL", link: "./querydsl/result.json" },
+          { project: "Processing", link: "./processing/result.json" },
+          { project: "Grails Core", link: "./grails_core/result.json" },
+          { project: "Hive", link: "./hive/result.json" },
+          { project: "JGroups", link: "./jgroups/result.json" },
+          { project: "OsmAnd", link: "./osmand/result.json" },
+          {
+            project: "Spring Framework",
+            link: "./spring_framework/result.json",
+          },
+          {
+            project: "BroadleafCommerce",
+            link: "./broadleafcommerce/result.json",
+          },
+          { project: "Infinispan", link: "./infinispan/result.json" },
+          { project: "Languagetool", link: "./languagetool/result.json" },
+        ];
+
+        projects.map((project) => {
+          $.getJSON(project.link, 
+          function (data) {
+            console.log("success");
+            console.log(data);
+
+            let dates = data.map((d) => d.commit_date?.split("-")[0]);
+
+            const selectedDate = "2020"; //dates[0];
+
+            dates = new Set(dates.sort((a, b) => b - a));
+
+            const metrics = {
+              cbo_min: Infinity,
+              lcom_min: Infinity,
+              loc_min: Infinity,
+              wmc_min: Infinity,
+              cbo_max: -Infinity,
+              lcom_max: -Infinity,
+              loc_max: -Infinity,
+              wmc_max: -Infinity,
+            };
+
+            data
+              .filter((d) => d.commit_date.split("-")[0] == selectedDate)
+              .map((d) => {
+                if (d.cbo >= metrics.cbo_max) metrics.cbo_max = d.cbo;
+                if (d.cbo <= metrics.cbo_min) metrics.cbo_min = d.cbo;
+                if (d.lcom >= metrics.lcom_max) metrics.lcom_max = d.lcom;
+                if (d.lcom <= metrics.lcom_min) metrics.lcom_min = d.lcom;
+                if (d.loc >= metrics.loc_max) metrics.loc_max = d.loc;
+                if (d.loc <= metrics.loc_min) metrics.loc_min = d.loc;
+                if (d.wmc >= metrics.wmc_max) metrics.wmc_max = d.wmc;
+                if (d.wmc <= metrics.wmc_min) metrics.wmc_min = d.wmc;
+              });
+
+            console.log("dates " + selectedDate);
+            console.table(metrics);
+
+           
+
+            document.querySelector("#content").innerHTML += "<li><div>" +
+                project.project +
+                " - 2020 </div> <div>" +
+                JSON.stringify(metrics, null, 4) +
+                "</div></li>"
+            
+          })
+        });
+      });
+    </script>
+  </body>
+</html>
