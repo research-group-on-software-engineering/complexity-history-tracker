@@ -1,0 +1,5657 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Complexity History Tracker - Languagetool</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.4.1/chart.min.js"
+      integrity="sha512-5vwN8yor2fFT9pgPS9p9R7AszYaNn0LkQElTXIsZFCL7ucT8zDCAqlQXDdaqgA1mZP47hdvztBMsIoFxq/FyyQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+      .container ul,
+      .container li {
+        list-style-type: none;
+        cursor: pointer;
+        padding-left: 0;
+        width: fit-content;
+      }
+
+      .container li {
+        padding-top: 3px;
+        padding-bottom: 3px;
+      }
+
+      .container li:hover {
+        background-color: #c2c2c2;
+        width: 100%;
+        color: #fff;
+      }
+      .container #filter {
+        width: 50vw;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+      .container h2{
+        margin-top: 30px;
+      }
+    </style>
+  </head>
+  <body>
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#"></a>
+      <a class="navbar-brand" href="#">Complexity Tracker</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="./../menu.html">Projects<span class="sr-only"></span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">cluster</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index-filled.html">classes</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  
+    <div class="container">
+      <h2>Complexity History Tracker - Languagetool</h2>
+      <!-- <input placeholder="filter classname" id="filter" /> -->
+      <ul id="sel" style="max-height: 200px; overflow-y: scroll" class="card">
+        <li value="s0001">Carregando...</li>
+      </ul>
+    
+    <div style="width: 100%" class="d-flex justify-content-center align-items-center">
+    
+        <canvas id="myChart" width="400" height="150"></canvas>
+      </div>
+
+      <div id="tables"></div>
+
+  </div>
+
+  
+ 
+  </body>
+
+  <script>
+    let selected =
+      document.location.href.split("?selected=")[1] ||
+      "mean";
+    let names = [];
+
+    let filter = "";
+    $(function () {
+      document.querySelector("#filter")?.addEventListener("keyup", (event) => {
+        
+        filter = event.target.value;
+
+        mapFilenames(
+          grouped.filter((file) =>
+            file.classname
+              .toLocaleLowerCase()
+              .includes(filter.toLocaleLowerCase())
+          )
+        );
+      });
+
+      const grouped_raw = [
+    {
+        "classname": "org.languagetool.dev.dumpcheck.SentenceSourceIndexer",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    10,
+                    10,
+                    11,
+                    14,
+                    14,
+                    15,
+                    14,
+                    null
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    null
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    75,
+                    75,
+                    75,
+                    97,
+                    97,
+                    115,
+                    102,
+                    null
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    11,
+                    12,
+                    12,
+                    17,
+                    17,
+                    19,
+                    18,
+                    null
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.dev.index.Indexer",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    15,
+                    16,
+                    16,
+                    16,
+                    16,
+                    16,
+                    16,
+                    17
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    52,
+                    50,
+                    52,
+                    64,
+                    64,
+                    81,
+                    81,
+                    81
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    109,
+                    115,
+                    114,
+                    135,
+                    135,
+                    160,
+                    162,
+                    165
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    21,
+                    22,
+                    22,
+                    29,
+                    29,
+                    37,
+                    38,
+                    38
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.dev.index.LanguageToolFilter",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    12,
+                    12,
+                    11,
+                    11,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    80,
+                    97,
+                    96,
+                    106,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    14,
+                    18,
+                    18,
+                    19,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.dev.index.PatternRuleQueryBuilder",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    21,
+                    21,
+                    22,
+                    20,
+                    20,
+                    20,
+                    20,
+                    20
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    54,
+                    83,
+                    81,
+                    72,
+                    72,
+                    72,
+                    75,
+                    75
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    168,
+                    182,
+                    189,
+                    185,
+                    185,
+                    185,
+                    180,
+                    177
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    48,
+                    55,
+                    56,
+                    54,
+                    54,
+                    54,
+                    54,
+                    54
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.gui.Tools",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    2,
+                    4,
+                    4,
+                    7,
+                    8,
+                    8,
+                    8,
+                    null
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    91,
+                    105,
+                    120,
+                    153,
+                    153,
+                    190,
+                    190,
+                    null
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    79,
+                    139,
+                    148,
+                    171,
+                    176,
+                    196,
+                    196,
+                    null
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    28,
+                    37,
+                    41,
+                    48,
+                    50,
+                    58,
+                    58,
+                    null
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.language.AmericanEnglish",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    2,
+                    3,
+                    3,
+                    3,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    6,
+                    3,
+                    3,
+                    3,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    17,
+                    14,
+                    14,
+                    14,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    4,
+                    3,
+                    3,
+                    3,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.language.BritishEnglish",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    3,
+                    4,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    3,
+                    3,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    15,
+                    15,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    3,
+                    3,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.language.Catalan",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    28,
+                    30,
+                    31,
+                    33,
+                    34,
+                    38,
+                    38,
+                    38
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    55,
+                    64,
+                    55,
+                    78,
+                    78,
+                    78,
+                    78,
+                    171
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    56,
+                    60,
+                    56,
+                    82,
+                    88,
+                    90,
+                    94,
+                    136
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    16,
+                    17,
+                    16,
+                    27,
+                    30,
+                    31,
+                    33,
+                    54
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.language.English",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    24,
+                    32,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    55,
+                    112,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    56,
+                    82,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    16,
+                    24,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.language.Esperanto",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    18,
+                    20,
+                    20,
+                    21,
+                    21,
+                    22,
+                    22,
+                    24
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    36,
+                    43,
+                    36,
+                    45,
+                    45,
+                    45,
+                    45,
+                    45
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    41,
+                    45,
+                    41,
+                    44,
+                    44,
+                    44,
+                    44,
+                    32
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    12,
+                    13,
+                    12,
+                    13,
+                    13,
+                    13,
+                    13,
+                    10
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.language.Galician",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    21,
+                    22,
+                    22,
+                    22,
+                    31,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    66,
+                    76,
+                    45,
+                    45,
+                    66,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    58,
+                    62,
+                    52,
+                    52,
+                    96,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    17,
+                    18,
+                    15,
+                    15,
+                    35,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.language.Lithuanian",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    10,
+                    13,
+                    13,
+                    13,
+                    13,
+                    14,
+                    14,
+                    15
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    15,
+                    26,
+                    21,
+                    21,
+                    21,
+                    21,
+                    21,
+                    21
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    24,
+                    35,
+                    31,
+                    31,
+                    31,
+                    31,
+                    31,
+                    23
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    7,
+                    10,
+                    9,
+                    9,
+                    9,
+                    9,
+                    9,
+                    7
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.language.Polish",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    20,
+                    25,
+                    25,
+                    26,
+                    26,
+                    27,
+                    27,
+                    28
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    36,
+                    62,
+                    45,
+                    55,
+                    55,
+                    55,
+                    55,
+                    66
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    45,
+                    60,
+                    53,
+                    56,
+                    56,
+                    56,
+                    56,
+                    44
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    13,
+                    17,
+                    15,
+                    16,
+                    16,
+                    16,
+                    16,
+                    13
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.language.Russian",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    20,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    36,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    47,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    13,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.language.Slovenian",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    11,
+                    12,
+                    12,
+                    12,
+                    12,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    28,
+                    34,
+                    15,
+                    15,
+                    15,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    30,
+                    34,
+                    24,
+                    24,
+                    24,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    9,
+                    10,
+                    7,
+                    7,
+                    7,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.language.Tagalog",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    10,
+                    15,
+                    15,
+                    15,
+                    15,
+                    16,
+                    16,
+                    17
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    15,
+                    34,
+                    28,
+                    28,
+                    28,
+                    28,
+                    28,
+                    28
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    28,
+                    46,
+                    38,
+                    38,
+                    38,
+                    38,
+                    38,
+                    26
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    7,
+                    12,
+                    11,
+                    11,
+                    11,
+                    11,
+                    11,
+                    8
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.rules.bitext.BitextRule",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    8,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    73,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    41,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    15,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.rules.br.TopoReplaceRule",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    9,
+                    9,
+                    9,
+                    8,
+                    8,
+                    8,
+                    8,
+                    9
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    114,
+                    114,
+                    114,
+                    114,
+                    99,
+                    99,
+                    64,
+                    64
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    154,
+                    154,
+                    140,
+                    140,
+                    138,
+                    138,
+                    131,
+                    131
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    43,
+                    43,
+                    40,
+                    40,
+                    39,
+                    39,
+                    37,
+                    37
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.rules.ca.MorfologikCatalanSpellerRule",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    2,
+                    2,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    3,
+                    6,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    13,
+                    16,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    3,
+                    4,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.rules.de.WordCoherencyRuleTest",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    6,
+                    6,
+                    6,
+                    6,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    10,
+                    10,
+                    10,
+                    10,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    85,
+                    85,
+                    74,
+                    74,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    5,
+                    5,
+                    5,
+                    5,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.rules.en.AvsAnRuleTest",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    6,
+                    6,
+                    10,
+                    11,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    92,
+                    93,
+                    117,
+                    117,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    6,
+                    6,
+                    10,
+                    10,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.rules.en.MorfologikNewZealandSpellerRuleTest",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    6,
+                    9,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    0,
+                    1,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    25,
+                    30,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    1,
+                    2,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.rules.en.MorfologikSouthAfricanSpellerRuleTest",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    6,
+                    9,
+                    9,
+                    9,
+                    9,
+                    10,
+                    10,
+                    10
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    0,
+                    1,
+                    1,
+                    1,
+                    1,
+                    3,
+                    3,
+                    3
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    25,
+                    30,
+                    30,
+                    30,
+                    30,
+                    40,
+                    41,
+                    41
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    1,
+                    2,
+                    2,
+                    2,
+                    2,
+                    5,
+                    5,
+                    5
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.rules.fr.QuestionWhitespaceRule",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    5,
+                    5,
+                    5,
+                    4,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    10,
+                    10,
+                    10,
+                    10,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    104,
+                    106,
+                    106,
+                    106,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    38,
+                    38,
+                    38,
+                    38,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.rules.patterns.PatternRuleHandler",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    11,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    3,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    447,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    144,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.rules.patterns.PatternRuleXmlCreator",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    11,
+                    11,
+                    11,
+                    11,
+                    11,
+                    11,
+                    11,
+                    12
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    61,
+                    61,
+                    61,
+                    61,
+                    61,
+                    61,
+                    61,
+                    61
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    13,
+                    13,
+                    13,
+                    13,
+                    13,
+                    13,
+                    13,
+                    13
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.rules.pl.CompoundRuleTest",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    4,
+                    9,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    1,
+                    6,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    12,
+                    42,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    2,
+                    9,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.rules.pl.MorfologikPolishSpellerRule",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    2,
+                    8,
+                    9,
+                    8,
+                    9,
+                    10,
+                    10,
+                    11
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    6,
+                    21,
+                    21,
+                    21,
+                    21,
+                    19,
+                    19,
+                    19
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    16,
+                    130,
+                    130,
+                    130,
+                    130,
+                    143,
+                    143,
+                    143
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    4,
+                    25,
+                    26,
+                    26,
+                    26,
+                    28,
+                    29,
+                    29
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.rules.SameRuleGroupFilterTest",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    7,
+                    9,
+                    9,
+                    10,
+                    10,
+                    10,
+                    10,
+                    null
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    10,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    null
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    47,
+                    48,
+                    48,
+                    48,
+                    48,
+                    48,
+                    48,
+                    null
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    5,
+                    5,
+                    5,
+                    5,
+                    5,
+                    5,
+                    5,
+                    null
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.rules.uk.MorfologikUkrainianSpellerRule",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    3,
+                    3,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    6,
+                    6,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    29,
+                    29,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    10,
+                    10,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.rules.WrongWordInContextRule",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    9,
+                    9,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    64,
+                    64,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    149,
+                    149,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    36,
+                    37,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.rules.WrongWordInContextRule$ContextWords",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    1,
+                    1,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    2,
+                    2,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    24,
+                    24,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    5,
+                    5,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.server.HTTPSServerTest",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    6,
+                    6,
+                    6,
+                    6,
+                    6,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    13,
+                    13,
+                    13,
+                    13,
+                    13,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    80,
+                    80,
+                    83,
+                    83,
+                    83,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    11,
+                    11,
+                    12,
+                    12,
+                    12,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.server.HTTPSServerTesting",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    7,
+                    7,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    4,
+                    4,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    78,
+                    78,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    9,
+                    9,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.server.HTTPSServerTesting$TestRunnable",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    1,
+                    1,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    0,
+                    0,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    16,
+                    16,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    4,
+                    4,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.server.LanguageToolHttpHandler",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    12,
+                    15,
+                    17,
+                    16,
+                    17,
+                    22,
+                    26,
+                    27
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    80,
+                    314,
+                    428,
+                    39,
+                    65,
+                    117,
+                    76,
+                    72
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    273,
+                    416,
+                    446,
+                    263,
+                    269,
+                    351,
+                    355,
+                    372
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    61,
+                    92,
+                    102,
+                    58,
+                    62,
+                    91,
+                    92,
+                    94
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.server.LanguageToolHttpHandler$Anonymous1",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    1,
+                    2,
+                    2,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    0,
+                    0,
+                    0,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    5,
+                    5,
+                    5,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    1,
+                    1,
+                    1,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.server.LanguageToolHttpHandler$QueryParams",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    0,
+                    0,
+                    0,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    0,
+                    0,
+                    0,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    12,
+                    12,
+                    12,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    1,
+                    1,
+                    1,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.tagging.de.GermanTagger",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    12,
+                    6,
+                    7,
+                    7,
+                    9,
+                    9,
+                    9,
+                    15
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    45,
+                    43,
+                    43,
+                    43,
+                    97,
+                    112,
+                    112,
+                    126
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    139,
+                    90,
+                    91,
+                    94,
+                    210,
+                    256,
+                    257,
+                    372
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    36,
+                    23,
+                    23,
+                    25,
+                    66,
+                    85,
+                    85,
+                    132
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.tagging.disambiguation.ca.CatalanHybridDisambiguator",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    5,
+                    5,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    0,
+                    0,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    7,
+                    7,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    1,
+                    1,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.tagging.disambiguation.rules.ro.RomanianRuleDisambiguatorTest",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    9,
+                    9,
+                    9,
+                    10,
+                    10,
+                    10,
+                    10,
+                    10
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    31,
+                    31,
+                    31,
+                    31,
+                    31,
+                    31,
+                    31,
+                    31
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.dev.FrequencyIndexCreatorTest",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    10,
+                    10,
+                    10,
+                    10,
+                    10,
+                    10,
+                    null
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    null
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    35,
+                    35,
+                    35,
+                    35,
+                    35,
+                    35,
+                    null
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    7,
+                    7,
+                    7,
+                    7,
+                    7,
+                    7,
+                    null
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.gui.Tools$Anonymous1",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    null
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    null
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    14,
+                    14,
+                    14,
+                    14,
+                    7,
+                    7,
+                    null
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    4,
+                    4,
+                    4,
+                    4,
+                    2,
+                    2,
+                    null
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.language.Persian",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    18,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    26,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    35,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    10,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.language.Tamil",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    12,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    26,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    35,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    10,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.server.LanguageToolHttpHandler$Anonymous2",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    1,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    0,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    5,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    1,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.rules.ngrams.ConfusionProbabilityRuleTest",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    11,
+                    10,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    0,
+                    0,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    104,
+                    72,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    9,
+                    9,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.rules.ngrams.ConfusionProbabilityRuleTest$Anonymous1",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    0,
+                    0,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    0,
+                    0,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    5,
+                    5,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    1,
+                    1,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.rules.ngrams.ConfusionProbabilityRuleTest$FakeLanguageModel",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    2,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    9,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    33,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    8,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.rules.ngrams.ConfusionProbabilityRuleTest$FakeRule",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    4,
+                    4,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    0,
+                    0,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    5,
+                    5,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    1,
+                    1,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.rules.patterns.RegexPatternRule",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    7,
+                    7,
+                    7,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    14,
+                    14,
+                    14,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    99,
+                    99,
+                    104,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    18,
+                    18,
+                    19,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.tools.RuleMatchAsXmlSerializerTest",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    11,
+                    12,
+                    12,
+                    12,
+                    12,
+                    12
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    104,
+                    117,
+                    112,
+                    112,
+                    112,
+                    112
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    6,
+                    7,
+                    7,
+                    7,
+                    7,
+                    7
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.tools.RuleMatchAsXmlSerializerTest$Anonymous1",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    10,
+                    10,
+                    5,
+                    5,
+                    5,
+                    5
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    2,
+                    2,
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.tools.RuleMatchAsXmlSerializerTest$FakeRule",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4,
+                    4
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    8,
+                    8,
+                    8,
+                    8,
+                    8,
+                    8
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2,
+                    2
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.rules.ngrams.ConfusionProbabilityRule",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    16,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    166,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    229,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    65,
+                    null,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.server.ApiV2",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    8,
+                    13,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    1,
+                    15,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    52,
+                    92,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    8,
+                    18,
+                    null,
+                    null,
+                    null
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.dev.archive.ExampleSentenceCorrectionCreator",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    9,
+                    9,
+                    9,
+                    null
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    4,
+                    4,
+                    4,
+                    null
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    100,
+                    100,
+                    100,
+                    null
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    28,
+                    28,
+                    28,
+                    null
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.dev.archive.StartTokenCounter",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    9,
+                    9,
+                    9,
+                    null
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    1,
+                    1,
+                    1,
+                    null
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    41,
+                    41,
+                    41,
+                    null
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    17,
+                    17,
+                    17,
+                    null
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.ResultCache",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    6,
+                    8,
+                    8,
+                    9
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    32,
+                    51,
+                    51,
+                    61
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    9,
+                    12,
+                    12,
+                    13
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.rules.de.LongSentenceRule",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    5,
+                    6,
+                    6,
+                    6
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    26,
+                    26,
+                    26,
+                    10
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    111,
+                    123,
+                    75,
+                    65
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    56,
+                    64,
+                    35,
+                    32
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.rules.en.WordCoherencyRuleTest",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    9,
+                    9,
+                    9,
+                    9
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    1,
+                    1,
+                    1,
+                    0
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    36,
+                    37,
+                    37,
+                    52
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    7,
+                    7,
+                    7,
+                    7
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.rules.ru.RussianVerbConjugationRule",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    8,
+                    8,
+                    8,
+                    8
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    28,
+                    28,
+                    28,
+                    28
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    73,
+                    76,
+                    76,
+                    87
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    23,
+                    24,
+                    24,
+                    26
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.dev.bigdata.ProhibitedCompoundRuleEvaluator",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    19,
+                    19,
+                    null
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    21,
+                    21,
+                    null
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    201,
+                    201,
+                    null
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    46,
+                    46,
+                    null
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.ResultCache$MatchesWeigher",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    3,
+                    3,
+                    3
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    0,
+                    0,
+                    0
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    5,
+                    5,
+                    5
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    1,
+                    1,
+                    1
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.ResultCache$SentenceWeigher",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    3,
+                    3,
+                    3
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    0,
+                    0,
+                    0
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    5,
+                    5,
+                    5
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    1,
+                    1,
+                    1
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.openoffice.SwJLanguageTool",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    11,
+                    16
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    0,
+                    0
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    178,
+                    198
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    43,
+                    47
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.rules.de.AgreementRule2",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    11,
+                    11
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    24,
+                    24
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    64,
+                    65
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    21,
+                    23
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.ResultCache$RemoteMatchesWeigher",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    3
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    0
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    5
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    1
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.rules.en.EnglishForL2SpeakersFalseFriendRule",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    10
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    0
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    51
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    15
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.rules.fr.WordWithDeterminerFilter",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    9
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    1
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    100
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    28
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    },
+    {
+        "classname": "org.languagetool.tagging.de.GermanTagger$PrefixInfixVerb",
+        "datasets": [
+            {
+                "label": "cbo",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    0
+                ],
+                "borderColor": "#4dc9f6",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "lcom",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    0
+                ],
+                "borderColor": "#f67019",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "loc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    10
+                ],
+                "borderColor": "#f53794",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            },
+            {
+                "label": "wmc",
+                "data": [
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null,
+                    1
+                ],
+                "borderColor": "#537bc4",
+                "fill": false,
+                "cubicInterpolationMode": "monotone",
+                "tension": 0.4
+            }
+        ]
+    }
+]
+
+
+
+      
+     const grouped_filled = grouped_raw.map(file => {
+        return {
+          ...file,
+          datasets: file.datasets.map(dataset => {
+            let lastData = 0;
+            return {
+              ...dataset,
+              data: dataset.data.map(d => {
+                // if(d == null){
+                //   return lastData
+                // }
+                // lastData = d
+                return d;
+              })
+            }
+          })
+        }
+      })
+
+       
+        const attrsMedium = [
+            {
+              label: "cbo",
+              data: [],
+              borderColor: "#4dc9f6",
+              fill: false,
+              cubicInterpolationMode: "monotone",
+              tension: 0.4,
+            },
+            {
+              label: "lcom",
+              data: [],
+              borderColor: "#f67019",
+              fill: false,
+              cubicInterpolationMode: "monotone",
+              tension: 0.4,
+            },
+            {
+              label: "loc",
+              data: [],
+              borderColor: "#f53794",
+              fill: false,
+              cubicInterpolationMode: "monotone",
+              tension: 0.4,
+            },
+            {
+              label: "wmc",
+              data: [],
+              borderColor: "#537bc4",
+              fill: false,
+              cubicInterpolationMode: "monotone",
+              tension: 0.4,
+            },
+          ]  
+        //medium
+        
+        attrsMedium.map(attr => {
+          attr["data"] = []
+          const length = grouped_filled[0].datasets[0].data.length
+          
+          for(let i = 0 ; i < length; i ++){
+            attr["raw_data"] = []
+            grouped_filled.map(file => {
+              const founded = file.datasets.filter(dataset => dataset.label == attr.label).pop()
+              attr["raw_data"].push(founded.data[i])
+            })
+          const medium_point = attr["raw_data"].filter(d => d != null).reduce((acc, v)=> acc+v, 0) /  attr["raw_data"].filter(d => d != null).length
+          attr["data"].push(medium_point)
+        }
+         
+        })
+
+     
+
+        const attrsMedian = [
+            {
+              label: "cbo",
+              data: [],
+              borderColor: "#4dc9f670",
+              fill: false,
+              cubicInterpolationMode: "monotone",
+              tension: 0.4,
+            },
+            {
+              label: "lcom",
+              data: [],
+              borderColor: "#f6701970",
+              fill: false,
+              cubicInterpolationMode: "monotone",
+              tension: 0.4,
+            },
+            {
+              label: "loc",
+              data: [],
+              borderColor: "#f5379470",
+              fill: false,
+              cubicInterpolationMode: "monotone",
+              tension: 0.4,
+            },
+            {
+              label: "wmc",
+              data: [],
+              borderColor: "#537bc470",
+              fill: false,
+              cubicInterpolationMode: "monotone",
+              tension: 0.4,
+            },
+          ]
+     
+        //median
+        attrsMedian.map(attr => {
+          attr["data"] = []
+          const length = grouped_filled[0].datasets[0].data.length
+
+          for(let i = 0 ; i < length; i ++){
+            attr["raw_data"] = []
+            grouped_filled.map(file => {
+              const founded = file.datasets.filter(dataset => dataset.label == attr.label).pop()
+              attr["raw_data"].push(founded.data[i])
+            })
+            const filtered_data = attr["raw_data"].filter(d => d != null).sort((a,b)=>a-b)
+           
+            if(filtered_data.length % 2 == 0){
+              const middle = filtered_data.length / 2
+              attr["data"].push((filtered_data[middle-1] + filtered_data[middle+1]) /2)
+            }else {
+              attr["data"].push(filtered_data[Math.ceil(filtered_data.length / 2)])
+            }
+        }
+         
+        })
+
+
+
+        const attrsStd = [
+            {
+              label: "cbo",
+              data: [],
+              borderColor: "#b87cf9",
+              fill: false,
+              cubicInterpolationMode: "monotone",
+              tension: 0.4,
+            },
+            {
+              label: "lcom",
+              data: [],
+              borderColor: "#3ebb7c",
+              fill: false,
+              cubicInterpolationMode: "monotone",
+              tension: 0.4,
+            },
+            {
+              label: "loc",
+              data: [],
+              borderColor: "#fbec27",
+              fill: false,
+              cubicInterpolationMode: "monotone",
+              tension: 0.4,
+            },
+            {
+              label: "wmc",
+              data: [],
+              borderColor: "#ff0000",
+              fill: false,
+              cubicInterpolationMode: "monotone",
+              tension: 0.4,
+            },
+          ]
+       
+        //median
+        attrsStd.map(attr => {
+          attr["data"] = []
+          const length = grouped_filled[0].datasets[0].data.length
+
+          for(let i = 0 ; i < length; i ++){
+            attr["raw_data"] = []
+            grouped_filled.map(file => {
+              const founded = file.datasets.filter(dataset => dataset.label == attr.label).pop()
+              attr["raw_data"].push(founded.data[i])
+            })
+            const filtered_data = attr["raw_data"].filter(d => d != null)
+            attr["data"].push(stdev(filtered_data).deviation)
+        }
+         
+        })
+
+
+      const grouped = [{
+          classname: "mean",
+          datasets: attrsMedium
+        },
+        {
+          classname: "median",
+          datasets: attrsMedian
+        },
+        {
+          classname: "std",
+          datasets: attrsStd
+        },
+        {
+        classname: "mean_median_std",
+        datasets: [...attrsMedium, ...attrsMedian, ...attrsStd].map((a, i) => ({...a, label: `${a.label} ${i < 4 ? " Mean" : i < 8 ?" Median" : "STD"}`}))
+        }]
+
+        console.log(grouped)
+      
+      const ctx = document.getElementById("myChart").getContext("2d");
+
+      const MONTH_COUNT = 12;
+      const YEAR_COUNT = 2020;
+      const labels = [];
+    //   labels.push("2003-09");
+      for (let year = 2013; year <= YEAR_COUNT; year++) {
+        labels.push(`${year}-12`);
+      }
+
+      const data = {
+        labels: labels,
+        datasets: grouped.filter((file) => file.classname == selected)[0][
+          "datasets"
+        ],
+      };
+
+      // build table 
+
+      const buildTable = () => {
+//          <tr>
+//    <th>Firstname</th>
+//    <th>Lastname</th>
+//    <th>Age</th>
+//  </tr>
+
+const attrs = ["cbo","lcom","loc", "wmc"]
+const metrics = ["mean", "median", "std"]
+            const tables = attrs.map(attr => {
+              let tableStr = "<table class='table'>"
+              tableStr += `<tr><th></th><th></th><th></th><th>${attr}</th></tr>`
+              tableStr += `<tr><th></th><th>mean</th><th>median</th><th>std</th></tr>`
+
+              for(let i = 0; i < data.labels.length ; i++){
+                tableStr += `<tr><th>${data.labels[i]}</th><th>${grouped.filter(({classname}) => classname == "mean")[0].datasets.filter(({label}) => label == attr)[0].data[i]}
+                  </th><th>${grouped.filter(({classname}) => classname == "median")[0].datasets.filter(({label}) => label == attr)[0].data[i]}</th><th>${grouped.filter(({classname}) => classname == "std")[0].datasets.filter(({label}) => label == attr)[0].data[i]}</th></tr>`
+              }
+              
+
+              tableStr += "</table>"  
+              return tableStr
+            })
+
+            document.querySelector("#tables").innerHTML = tables.join("")
+
+
+
+      }
+
+      buildTable()
+      // </block:setup>
+
+      // <block:config:0>
+      const config = {
+        type: "line",
+        data: data,
+        options: {
+          responsive: true,
+          plugins: {
+            title: {
+              display: true,
+              text: "Complexity Tracker History - " + selected,
+            },
+          },
+          interaction: {
+            intersect: false,
+          },
+          scales: {
+            x: {
+              display: true,
+              title: {
+                display: true,
+              },
+            },
+            y: {
+              display: true,
+              title: {
+                display: true,
+                text: "Value",
+              },
+              suggestedMin: -10,
+              suggestedMax: 200,
+            },
+          },
+        },
+      };
+
+      var myChart = new Chart(ctx, config);
+
+      const mapFilenames = (grouped) => {
+        const list = [...new Set(grouped.map((f) => f.classname))];
+        
+        const select = document.querySelector("#sel");
+        select.innerHTML = list
+          .map((filename, index) => `<li id="file-${index}">${filename}</li>`)
+          .join("");
+        const r = list.map((filename, index) => {
+          document
+            .querySelector(`#file-${index}`)
+            .removeEventListener("click", () => {});
+          document
+            .querySelector(`#file-${index}`)
+            .addEventListener("click", () => {
+              selected = document.querySelector(`#file-${index}`).textContent;
+              document.location.href =
+                document.location.href.split("?")[0] + "?selected=" + selected;
+            });
+        });
+      };
+
+      mapFilenames(grouped);
+    });
+
+    const stdev = (arr) => {
+    const n = arr.length;
+    let sum = 0;
+
+    arr.map(function(data) {
+        sum+=data;
+    });
+
+    let mean = sum / n;
+
+    let variance = 0.0;
+    let v1 = 0.0;
+    let v2 = 0.0;
+
+    if (n != 1) {
+        for (let i = 0; i<n; i++) {
+            v1 = v1 + (arr[i] - mean) * (arr[i] - mean);
+            v2 = v2 + (arr[i] - mean);
+        }
+
+        v2 = v2 * v2 / n;
+        variance = (v1 - v2) / (n-1);
+        if (variance < 0) { variance = 0; }
+        stddev = Math.sqrt(variance);
+    }
+
+    return {
+        mean: Math.round(mean*100)/100,
+        variance: variance,
+        deviation: Math.round(stddev*100)/100
+    };
+};
+  </script>
+</html>
